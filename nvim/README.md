@@ -68,7 +68,7 @@ git clone https://github.com/dam9000/kickstart.nvim.git "${env:LOCALAPPDATA}\nvi
 
 Below you can find OS specific install instructions for Neovim and dependencies.
 
-After installing all the dependencies continue with the [Install Kickstart](#Install-Config) step.
+After installing all the dependencies continue with the [Install Config](#Install-Config) step.
 
 #### Windows Installation
 
