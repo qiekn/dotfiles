@@ -19,34 +19,34 @@ require("lazy").setup({
 
   -- modular approach: using `require 'path/name'` will include a plugin definition from file lua/path/name.lua
 
-  require("kickstart/plugins/gitsigns"),
+  require("plugins/gitsigns"),
 
-  require("kickstart/plugins/which-key"),
+  require("plugins/which-key"),
 
-  require("kickstart/plugins/telescope"),
+  require("plugins/telescope"),
 
-  require("kickstart/plugins/lspconfig"),
+  require("plugins/lspconfig"),
 
-  -- require("kickstart/plugins/conform"), --formart
+  -- require("plugins/conform"), --formart
 
-  require("kickstart/plugins/cmp"),
+  require("plugins/cmp"),
 
-  require("kickstart/plugins/tokyonight"),
+  require("plugins/colorscheme"),
 
-  require("kickstart/plugins/todo-comments"),
+  require("plugins/todo-comments"),
 
-  require("kickstart/plugins/mini"),
+  require("plugins/mini"),
 
-  require("kickstart/plugins/treesitter"),
+  require("plugins/treesitter"),
 
-  require("kickstart/plugins/indent_line"),
+  require("plugins/indent_line"),
 
-  require("kickstart/plugins/autopairs"),
+  require("plugins/autopairs"),
 
-  require("kickstart/plugins/neo-tree"),
+  require("plugins/neo-tree"),
 
-  -- require 'kickstart/plugins/debug',
-  -- require("kickstart/plugins/lint"),
+  -- require 'plugins/debug',
+  -- require("plugins/lint"),
 
   { import = "custom.plugins" },
 })
