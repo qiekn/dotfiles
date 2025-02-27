@@ -5,9 +5,7 @@ return {
 	{ "projekt0n/github-nvim-theme" },
 	{
 		"folke/tokyonight.nvim",
-		-- priority = 1000, -- Make sure to load this before all the other start plugins.
 		config = function()
-			---@diagnostic disable-next-line: missing-fields
 			require("tokyonight").setup({
 				styles = {
 					comments = { italic = false },
@@ -16,6 +14,16 @@ return {
 
 			-- Load the colorscheme here.
 			vim.cmd.colorscheme("github_dark")
+		end,
+	},
+	{
+		"xiyaowong/transparent.nvim",
+		config = function()
+			require("transparent").setup({
+				exclude_groups = { "CursorLine", "CursorLineNr" },
+			})
+			require("transparent").clear_prefix("NeoTree")
+			vim.cmd("TransparentEnable")
 		end,
 	},
 }

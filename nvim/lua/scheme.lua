@@ -1,1 +1,4 @@
-vim.api.nvim_set_hl(0, "Normal", { ctermbg = 'none' })
+vim.cmd("hi Normal ctermbg=none guibg=none")
+vim.cmd("hi CursorLine guibg=#383f58")
+-- vim.cmd("hi CursorLine guibg=red ctermbg=red ctermfg=white")
+-- vim.cmd("hi CursorLineNr guibg=red ctermbg=red ctermfg=white")
