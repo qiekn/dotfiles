@@ -18,35 +18,5 @@ require("lazy").setup({
   -- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
 
   -- modular approach: using `require 'path/name'` will include a plugin definition from file lua/path/name.lua
-
-  require("plugins/gitsigns"),
-
-  require("plugins/which-key"),
-
-  require("plugins/telescope"),
-
-  require("plugins/lspconfig"),
-
-  -- require("plugins/conform"), --formart
-
-  require("plugins/cmp"),
-
-  require("plugins/colorscheme"),
-
-  require("plugins/todo-comments"),
-
-  require("plugins/mini"),
-
-  require("plugins/treesitter"),
-
-  require("plugins/indent_line"),
-
-  require("plugins/autopairs"),
-
-  require("plugins/neo-tree"),
-
-  -- require 'plugins/debug',
-  -- require("plugins/lint"),
-
-  { import = "custom.plugins" },
+  { import = "plugins" },
 })
