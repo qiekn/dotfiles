@@ -8,8 +8,8 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 -- Keybinds to make split navigation easier.
--- vim.keymap.set("n", "<leader>h", "<C-w>h", { desc = "Move focus to the [L]eft window" })
--- vim.keymap.set("n", "<leader>l", "<C-w>l", { desc = "Move focus to the [R]ight window" })
+vim.keymap.set("n", "<leader>h", "<C-w>h", { desc = "Move focus to the [L]eft window" })
+vim.keymap.set("n", "<leader>l", "<C-w>l", { desc = "Move focus to the [R]ight window" })
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
