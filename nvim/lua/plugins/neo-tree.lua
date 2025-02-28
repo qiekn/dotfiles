@@ -3,6 +3,27 @@
 
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  config = function()
+    require("neo-tree").setup({
+      source_selector = {
+        winbar = true,
+        statusline = false,
+      },
+      sources = {
+        "filesystem",
+        "buffers",
+        "git_status",
+        "document_symbols",
+      },
+      filesystem = {
+        window = {
+          mappings = {
+            ["l"] = "open",
+          },
+        },
+      },
+    })
+  end,
   version = "*",
   dependencies = {
     "nvim-lua/plenary.nvim",
