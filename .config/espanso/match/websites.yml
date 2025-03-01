@@ -1,0 +1,34 @@
+matches:
+  - trigger: ";git"
+    replace: "https://git.lug.ustc.edu.cn/qiekn/"
+
+  - trigger: ";hub"
+    replace: "https://github.com/qiekn/"
+
+  - trigger: ";hot100"
+    replace: "https://leetcode.cn/problem-list/2cktkvj/"
+
+  - trigger: ";lcc"
+    replace: "lcid.cc/cn/"
+
+  - trigger: ";app"
+    replace: "app.yinxiang.com/client/web"
+
+  - trigger: ";oss"
+    replace: "https://oss.kimidayo.cn/"
+
+  - trigger: ";webp"
+    replace: "?x-oss-process=image/format,webp"
+
+  # NSFW
+  - trigger: ";av"
+    replace: "missav.ai/"
+
+  - trigger: ";miss"
+    replace: "site:missav.ai/"
+
+  - trigger: ";jav"
+    replace: "site:javlibrary.com/cn"
+
+  - trigger: ";mag"
+    replace: "magnet:?xt=urn:btih:"

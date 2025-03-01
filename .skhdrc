@@ -1,0 +1,95 @@
+# Gist: https://gist.githubusercontent.com/qiekn/eaa999138b7ce08666871f8d3244a858
+
+# NOTE: Layout
+
+# space layout
+alt - s : yabai -m space --layout stack
+# alt - f : yabai -m space --layout float
+alt - b : yabai -m space --layout bsp
+
+# window layout: toggle float and center on screen
+alt - t : yabai -m window --toggle float;\
+          yabai -m window --grid 4:4:1:1:2:2
+
+alt - tab : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+alt - m : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+alt - 0x2F : yabai -m window --focus stack.prev || yabai -m window --focus stack.last # 0x2F means comma --> ','
+alt - 0x2B : yabai -m window --focus stack.next || yabai -m window --focus stack.first # 0x2B means dot   --> '.'
+
+# NOTE: Space
+
+# spaces focus
+alt - 1 : yabai -m space --focus 1
+alt - 2 : yabai -m space --focus 2
+alt - 3 : yabai -m space --focus 3
+alt - 4 : yabai -m space --focus 4
+alt - 5 : yabai -m space --focus 5
+alt - 6 : yabai -m space --focus 6
+alt - 7 : yabai -m space --focus 7
+alt - 8 : yabai -m space --focus 8
+alt - 9 : yabai -m space --focus 9
+alt - 0x32 : yabai -m space --focus recent
+
+# space next/previous
+# alt - n : yabai -m space --focus next || yabai -m space --focus first
+# alt - p : yabai -m space --focus prev || yabai -m space --focus last
+alt - n : yabai -m space --focus next
+alt - i : yabai -m space --focus prev
+
+alt - x : yabai -m space --destroy
+alt - c : yabai -m space --create
+
+# padding
+alt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
+
+# NOTE: Window
+
+# focus
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+
+# move and focus
+shift + alt - 1 : yabai -m window --space 1; yabai -m space --focus 1
+shift + alt - 2 : yabai -m window --space 2; yabai -m space --focus 2
+shift + alt - 3 : yabai -m window --space 3; yabai -m space --focus 3
+shift + alt - 4 : yabai -m window --space 4; yabai -m space --focus 4
+shift + alt - 5 : yabai -m window --space 5; yabai -m space --focus 5
+shift + alt - 6 : yabai -m window --space 6; yabai -m space --focus 6
+shift + alt - 7 : yabai -m window --space 7; yabai -m space --focus 7
+shift + alt - 8 : yabai -m window --space 8; yabai -m space --focus 8
+shift + alt - 9 : yabai -m window --space 9; yabai -m space --focus 9
+
+shift + alt - n : yabai -m window --space next; yabai -m space --focus next
+shift + alt - i : yabai -m window --space prev; yabai -m space --focus prev
+
+# zoom
+alt - z : yabai -m window --toggle zoom-fullscreen
+alt - f : yabai -m window --toggle zoom-fullscreen
+
+# swap
+shift + alt - h : yabai -m window --swap west
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - l : yabai -m window --swap east
+
+# toggle split
+alt - e : yabai -m window --toggle split
+
+# balance size
+shift + alt - 0 : yabai -m space --balance
+
+# rotate
+alt - r : yabai -m space --rotate 270
+
+# resize
+# left border
+shift + alt - q : yabai -m window --resize left:-100:0
+shift + alt - a : yabai -m window --resize left:100:0
+# right border
+shift + alt - e : yabai -m window --resize right:100:0
+shift + alt - d : yabai -m window --resize right:-100:0
+# top border
+shift + alt - w : yabai -m window --resize top:0:-100
+shift + alt - s : yabai -m window --resize top:0:100

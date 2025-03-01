@@ -1,0 +1,82 @@
+#!/usr/bin/env sh
+
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+# global settings
+yabai -m config                                 \
+    mouse_follows_focus          off            \
+    focus_follows_mouse          off            \
+    window_origin_display        default        \
+    window_placement             second_child   \
+    window_topmost               off            \
+    window_shadow                float          \
+    window_animation_duration    0.0            \
+    window_opacity_duration      0.0            \
+    active_window_opacity        0.90           \
+    normal_window_opacity        0.90           \
+    window_opacity               off            \
+    insert_feedback_color        0xffd75f5f     \
+    active_window_border_color   0xff775759     \
+    normal_window_border_color   0xff555555     \
+    window_border_width          4              \
+    window_border_radius         12             \
+    window_border_blur           off            \
+    window_border_hidpi          on             \
+    window_border                off            \
+    split_ratio                  0.50           \
+    split_type                   auto           \
+    auto_balance                 off            \
+    mouse_modifier               fn             \
+    mouse_action1                move           \
+    mouse_action2                resize         \
+    mouse_drop_action            swap           \
+    layout                       bsp            \
+    top_padding                  10             \
+    bottom_padding               3              \
+    left_padding                 12             \
+    right_padding                12             \
+    window_gap                   3
+
+# bar settings
+# yabai -m config status_bar                   on
+# yabai -m config status_bar_text_font         "Helvetica Neue:Bold:12.0"
+# yabai -m config status_bar_icon_font         "FontAwesome:Regular:12.0"
+# yabai -m config status_bar_background_color  0xff202020
+# yabai -m config status_bar_foreground_color  0xffa8a8a8
+# yabai -m config status_bar_space_icon_strip  I II III IV V VI VII VIII IX X
+# yabai -m config external_bar main:0:28 换到了顶部，所以不需要了
+
+# yabai -m config window_topmost on
+
+## sub-winodws {
+
+#IntelliJ
+JB_Apps='^(CLion|PyCharm|IntelliJ IDEA)$'
+yabai -m rule --add app="${JB_Apps}" manage=off
+# If `Open last project when launch` is checked, add this rule. And make sure `always show project path` is also checked.
+# yabai -m rule --add app="${JB_Apps}" title=".*\[.*\].*" manage=on
+yabai -m rule --add app="${JB_Apps}" title="^$"  manage=on
+
+#wechat
+yabai -m rule --add app="^WeChat$" manage=off
+yabai -m rule --add app="^WeChat$" title='WeChat \((.*)\)' manage=on
+
+# qq image
+yabai -m rule --add app='QQ' title='图片查看器' manage=off
+
+# others
+yabai -m rule --add app="System Settings" manage=off
+yabai -m rule --add app="^Bartender" manage=off
+yabai -m rule --add app="PicGo" manage=off
+yabai -m rule --add app="Downie 4" manage=off
+yabai -m rule --add app="Finder" manage=off
+yabai -m rule --add app="Kap" manage=off
+yabai -m rule --add app="Listen1" manage=off
+yabai -m rule --add app="MacVim" manage=off
+
+yabai -m rule --add app="Chrome" title="^DevTools" manage=off
+
+# }
+
+sudo yabai --load-sa
+echo "yabai configuration loaded..
