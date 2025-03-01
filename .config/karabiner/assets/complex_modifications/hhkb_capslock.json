@@ -1,0 +1,27 @@
+{
+  "title": "HHKB CapsLock",
+  "rules": [
+    {
+      "description": "Caps Lock → LCtrl (Switch input-mode if alone)",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "caps_lock"
+          },
+          "to": {
+            "key_code": "left_control"
+          },
+          "to_if_alone": [
+            {
+              "key_code": "spacebar",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}

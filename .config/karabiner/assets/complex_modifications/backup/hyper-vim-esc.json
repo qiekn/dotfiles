@@ -1,0 +1,34 @@
+{
+  "title":"Hyper Vim Esc",
+  "rules":[
+    {
+      "description":"Hyper - [ --> Ctrl - [",
+      "manipulators":[
+        {
+          "from":{
+            "key_code":"open_bracket",
+            "modifiers":{
+              "mandatory":[
+                "left_shift",
+                "left_command",
+                "left_control",
+                "left_option"
+              ],
+              "optional":[
+                "any"
+              ]
+            }
+          },
+          "to":[
+            {
+              "key_code":"open_bracket",
+              "modifiers":"left_control"
+            }
+          ],
+          "type":"basic"
+        }
+      ]
+    }
+  ]
+}
+
