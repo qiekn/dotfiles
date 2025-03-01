@@ -14,18 +14,12 @@ matches:
   - trigger: ";app"
     replace: "app.yinxiang.com/client/web"
 
-  - trigger: ";oss"
-    replace: "https://oss.kimidayo.cn/"
-
-  - trigger: ";webp"
-    replace: "?x-oss-process=image/format,webp"
-
   # NSFW
   - trigger: ";av"
     replace: "missav.ai/"
 
   - trigger: ";miss"
-    replace: "site:missav.ai/"
+    replace: "site:missav.ws/"
 
   - trigger: ";jav"
     replace: "site:javlibrary.com/cn"
