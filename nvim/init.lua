@@ -16,3 +16,6 @@ require("keymaps")
 
 -- [[ UI Style ]]
 require("scheme")
+
+-- [[ How to quit Vim ]]
+require("commands")
