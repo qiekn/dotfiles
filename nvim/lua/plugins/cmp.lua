@@ -1,23 +1,10 @@
 return {
-  -- Note:
   -- nvim-cmp  —>  Snippet Engine (Luasnip/UltiSnips)  —>  Snippets Sources
   { -- Autocompletion
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
       -- Snippet Engine & its associated nvim-cmp source
-      { -- LuaSnip
-        "L3MON4D3/LuaSnip",
-        build = (function()
-          -- Build Step is needed for regex support in snippets.
-          -- This step is not supported in many windows environments.
-          -- Remove the below condition to re-enable on windows.
-          if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
-            return
-          end
-          return "make install_jsregexp"
-        end)(),
-      },
       { -- UltiSnip
         "quangnguyen30192/cmp-nvim-ultisnips",
         dependencies = {
@@ -44,25 +31,14 @@ return {
     config = function()
       -- See `:help cmp`
       local cmp = require("cmp")
-      local luasnip = require("luasnip")
-      luasnip.config.setup({})
-
       cmp.setup({
         snippet = {
           expand = function(args)
-            if luasnip.expandable() then
-              luasnip.lsp_expand(args.body)
-            else
-              vim.fn["UltiSnips#Anon"](args.body)
-            end
+            vim.fn["UltiSnips#Anon"](args.body)
           end,
         },
         completion = { completeopt = "menu,menuone,noinsert" },
 
-        -- For an understanding of why these mappings were
-        -- chosen, you will need to read `:help ins-completion`
-        --
-        -- No, but seriously. Please read `:help ins-completion`, it is really good!
         mapping = cmp.mapping.preset.insert({
           ["<C-n>"] = cmp.mapping.select_next_item(),
           ["<C-p>"] = cmp.mapping.select_prev_item(),
@@ -77,8 +53,6 @@ return {
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
           -- Manually trigger a completion from nvim-cmp.
-          --  Generally you don't need this, because nvim-cmp will display
-          --  completions whenever it has completion options available.
           ["<C-Space>"] = cmp.mapping.complete({}),
         }),
         sources = {
