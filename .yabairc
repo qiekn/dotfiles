@@ -48,7 +48,9 @@ yabai -m config                                 \
 
 # yabai -m config window_topmost on
 
-## sub-winodws {
+# ┌─────────────────┐
+# │ ignored windows │
+# └─────────────────┘
 
 #IntelliJ
 JB_Apps='^(CLion|PyCharm|IntelliJ IDEA)$'
@@ -57,11 +59,9 @@ yabai -m rule --add app="${JB_Apps}" manage=off
 # yabai -m rule --add app="${JB_Apps}" title=".*\[.*\].*" manage=on
 yabai -m rule --add app="${JB_Apps}" title="^$"  manage=on
 
-#wechat
+# social
 yabai -m rule --add app="^WeChat$" manage=off
 yabai -m rule --add app="^WeChat$" title='WeChat \((.*)\)' manage=on
-
-# qq image
 yabai -m rule --add app='QQ' title='图片查看器' manage=off
 
 # others
@@ -73,10 +73,12 @@ yabai -m rule --add app="Finder" manage=off
 yabai -m rule --add app="Kap" manage=off
 yabai -m rule --add app="Listen1" manage=off
 yabai -m rule --add app="MacVim" manage=off
-
 yabai -m rule --add app="Chrome" title="^DevTools" manage=off
 
-# }
+# game dev
+yabai -m rule --add app="go$" manage=off
+
+# -------------------------
 
 sudo yabai --load-sa
 echo "yabai configuration loaded..
