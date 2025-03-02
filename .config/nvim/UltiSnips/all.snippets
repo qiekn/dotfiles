@@ -10,7 +10,7 @@ priority -60
 # NICE BOXES #
 ##############
 global !p
-from vimsnippets import foldmarker, make_box, get_comment_format
+from vimsnippets import make_fixed_box, make_box, get_comment_format
 LOREM = """
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod \
 tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At \
@@ -50,6 +50,24 @@ box = make_box(len(t[1]), width)
 snip.rv = box[2]
 snip += box[3]`
 $0
+endsnippet
+
+snippet dbox "D type box" bA
+`!p snip.rv = '/*' + '─' * (len(t[1]) + 1) + '┐'`
+│ $1 │
+`!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '*/'`
+endsnippet
+
+snippet ebox "E type fiexed box" bA
+`!p
+width = 41
+box = make_fixed_box(len(t[1]), width)
+snip.rv = box[0]
+snip += box[1]
+`${1:${VISUAL:content}}`!p
+box = make_fixed_box(len(t[1]), width)
+snip.rv = box[2]
+snip += box[3]`
 endsnippet
 
 ##########################

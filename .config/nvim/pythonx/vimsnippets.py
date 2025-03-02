@@ -81,6 +81,14 @@ def get_comment_format():
             return c[1:]
     return comments[0][1:]
 
+def make_fixed_box(twidth, bwidth):
+    bwidth_inner = bwidth - 3
+    sline = "/*" + "─" * (bwidth_inner - 1) + "┐"
+    nspaces = (bwidth_inner - twidth) // 2
+    mlines = "│" + " " * nspaces
+    mlinee = " " * (bwidth_inner - twidth - nspaces) + "│"
+    eline = "└" + "─" * bwidth_inner + "*/"
+    return sline, mlines, mlinee, eline
 
 def make_box(twidth, bwidth=None):
     b, m, e, i = (s.strip() for s in get_comment_format())
