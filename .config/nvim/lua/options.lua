@@ -48,6 +48,7 @@ set.expandtab = true
 
 set.list = true
 set.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.cmd("autocmd FileType go setlocal nolist")
 
 -- Preview substitutions live, as you type!
 set.inccommand = "split"
