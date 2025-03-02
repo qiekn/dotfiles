@@ -3,22 +3,13 @@
 return {
   { "rose-pine/neovim" },
   { "projekt0n/github-nvim-theme" },
-  {
-    "folke/tokyonight.nvim",
-    config = function()
-      require("tokyonight").setup({
-        styles = {
-          comments = { italic = false },
-        },
-      })
-
-      -- Load the colorscheme here.
-      vim.cmd.colorscheme("github_dark")
-    end,
-  },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { "folke/tokyonight.nvim" },
   {
     "xiyaowong/transparent.nvim",
     config = function()
+      -- Load the colorscheme here.
+      vim.cmd.colorscheme("github_dark")
       require("transparent").setup({
         extra_groups = { "NeoTreeNormal" },
         exclude_groups = { "CursorLine", "CursorLineNr", "NeoTreeCursorLine" },
