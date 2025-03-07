@@ -77,6 +77,8 @@ yabai -m rule --add app="Chrome" title="^DevTools" manage=off
 
 # game dev
 yabai -m rule --add app="go$" manage=off
+yabai -m rule --add app="^qiekn$" manage=off
+yabai -m rule --add title="Sokoban" manage=off
 
 # -------------------------
 
