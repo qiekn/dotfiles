@@ -15,6 +15,10 @@ return {
         "git_status",
         "document_symbols",
       },
+      document_symbols = {
+        follow_cursor = true,
+        auto_expand_level = 99,
+      },
       filesystem = {
         window = {
           mappings = {
