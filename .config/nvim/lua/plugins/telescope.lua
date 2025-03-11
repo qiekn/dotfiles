@@ -67,6 +67,11 @@ return {
             require("telescope.themes").get_dropdown(),
           },
         },
+        defaults = {
+          file_ignore_patterns = {
+            "%.meta$",
+          },
+        },
       })
 
       -- Enable Telescope extensions if they are installed
