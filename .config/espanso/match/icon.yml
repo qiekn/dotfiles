@@ -40,3 +40,7 @@ matches:
     replace: "<++>"
   - trigger: ";qmk"
     replace: "<??>"
+
+  - triggers: [";star"]
+    replace: "☆"
+  
