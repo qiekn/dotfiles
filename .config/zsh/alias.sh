@@ -23,3 +23,4 @@ alias vim='nvim'
 alias nvimdiff='nvim -d'
 alias python='python3'
 alias py='python3'
+alias lg="lazygit"
