@@ -33,6 +33,7 @@ return {
             ".DS_Store",
             "thumbs.db",
           },
+          show_hidden_count = false,
         },
       },
     })
