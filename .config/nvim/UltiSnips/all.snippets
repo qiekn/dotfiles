@@ -53,6 +53,12 @@ $0
 endsnippet
 
 snippet dbox "D type box" bA
+`!p snip.rv = '/*' + '─' * (len(t[1]) + 1) + '┐'`
+│ $1 │
+`!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '*/'`
+endsnippet
+
+snippet Dbox "E type box" bA
 `!p snip.rv = '/*' + '─' * (len(t[1]) + 2) + '┐'`
  │ $1 │
 `!p snip.rv = ' └' + '─' * (len(t[1]) + 2) + '*/'`
