@@ -1,0 +1,96 @@
+snippet uue "using UnityEngine" b
+using UnityEngine$1;
+endsnippet
+
+snippet cl "Class" b
+public class ${1:VISUAL} {
+	$0
+}
+endsnippet
+
+snippet interface "Interface" b
+public interface ${1:VISUAL} {
+	$0
+}
+endsnippet
+
+snippet log "Debug.Log" b
+Debug.Log($0);
+endsnippet
+
+snippet cor "Unity Coroutine" b
+private IEnumerator ${1:VISUAl}() {
+	yield break;$0
+}
+endsnippet
+
+snippet start "Start()" b
+void Start() {
+	$0
+}
+endsnippet
+
+snippet update "Update()" b
+void Update() {
+$0
+}
+endsnippet
+
+snippet awake "awake()" b
+void Awake() {
+	$0
+}
+endsnippet
+
+snippet sfield "SerializeField" b
+SerializeField
+endsnippet
+
+#######################################################################
+#                                Honza                                #
+#######################################################################
+
+snippet namespace "namespace" b
+namespace ${1:MyNamespace}
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet class "class" w
+public class ${2:`!p snip.rv = snip.basename`} {
+	$0
+}
+endsnippet
+
+snippet struct "struct" w
+struct ${1:`!p snip.rv = snip.basename`} {
+	$0
+}
+endsnippet
+
+snippet interface "interface" w
+interface I${1:`!p snip.rv = snip.basename`} {
+	$0
+}
+endsnippet
+
+snippet enum "enumeration" b
+enum ${1:MyEnum} { ${2:Item} };
+endsnippet
+
+############
+#  blocks  #
+############
+
+snippet #if "#if #endif" b
+#if ${1:DEBUG}
+${VISUAL}$0
+#endif
+endsnippet
+
+snippet #region "#region #endregion" b
+#region ${1:Region}
+${VISUAL}$0
+#endregion
+endsnippet
