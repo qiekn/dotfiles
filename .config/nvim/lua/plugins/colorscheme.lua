@@ -39,7 +39,9 @@ return {
           "NeoTreeNormal",
           "TelescopeNormal",
           "TelescopeBorder",
-          -- "TelescopeSelection",
+        },
+        exclude_groups = {
+          "TelescopeSelection",
           -- "TelescopeSelectionCaret",
         },
       })
