@@ -26,6 +26,7 @@ snippet abox "It's really a box."
 $0
 endsnippet
 
+# auto increase box
 snippet cbox "C type box" bA
 `!p
 box = make_box(len(t[1]))
@@ -38,6 +39,7 @@ snip += box[3]`
 $0
 endsnippet
 
+# fix width box
 snippet bbox "B type box" bA
 `!p
 if not snip.c:
@@ -117,7 +119,7 @@ snippet datetime "YYYY-MM-DD hh:mm" w
 endsnippet
 
 snippet todo "TODO comment" bw
-`!p snip.rv=get_comment_format()[0]` TODO: $1 <`!v strftime('%Y-%m-%d %H:%M')`, @qiekn> `!p snip.rv=get_comment_format()[2]`$0
+`!p snip.rv=get_comment_format()[0]` TODO: $0 <`!v strftime('%Y-%m-%d %H:%M')`, @qiekn>
 endsnippet
 
 ##########
