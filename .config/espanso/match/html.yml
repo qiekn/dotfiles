@@ -1,0 +1,7 @@
+matches:
+  - trigger: ";toggle"
+    replace: |
+      <details>
+        <summary></summary>
+      </details>
+
