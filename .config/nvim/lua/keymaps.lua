@@ -23,3 +23,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- Move Block
 -- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+
+-- Vim command line mode navigation with up and down
+vim.keymap.set("c", "<Down>", function()
+  return vim.fn.pumvisible() == 1 and "<C-n>" or "<Down>"
+end, { expr = true })
+vim.keymap.set("c", "<Up>", function()
+  return vim.fn.pumvisible() == 1 and "<C-p>" or "<Up>"
+end, { expr = true })
