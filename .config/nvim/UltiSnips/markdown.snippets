@@ -1,6 +1,3 @@
-snippet todo "todo list" bA
-- [ ] $0
-endsnippet
 
 priority -50
 
@@ -56,32 +53,13 @@ def create_table(snip):
 	snip.expand_anon(anon_snippet_table)
 endglobal
 
-###########################
-# Sections and Paragraphs #
-###########################
-snippet sec "Section" b
-# ${1:Section Name} #
-$0
+# markdown lint
+snippet mlint "markdownlint disable" b
+<!-- markdownlint disable$0 -->
 endsnippet
 
-snippet ssec "Sub Section" b
-## ${1:Section Name} ##
-$0
-endsnippet
-
-snippet sssec "SubSub Section" b
-### ${1:Section Name} ###
-$0
-endsnippet
-
-snippet par "Paragraph" b
-#### ${1:Paragraph Name} ####
-$0
-endsnippet
-
-snippet spar "Paragraph" b
-##### ${1:Paragraph Name} #####
-$0
+snippet todo "todo list" bA
+- [ ] $0
 endsnippet
 
 ###################
@@ -107,8 +85,8 @@ endsnippet
 ################
 # Common stuff #
 ################
-snippet link "Link to something"
-[${1:${VISUAL:Text}}](${3:https://${2:www.url.com}})$0
+snippet link "Link"
+[${1:${VISUAL:text}}](${2:${VISUAL:link}})$0
 endsnippet
 
 snippet img "Image"

@@ -9,10 +9,18 @@ return {
         "quangnguyen30192/cmp-nvim-ultisnips",
         dependencies = {
           "SirVer/ultisnips",
-          config = function()
+          init = function()
             vim.g.UltiSnipsExpandTrigger = "<Tab>"
             vim.g.UltiSnipsJumpForwardTrigger = "<Tab>"
             vim.g.UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+            vim.g.UltiSnipsEditSplit = "context"
+          end,
+          config = function()
+            -- When you change snippets use blow command to hot reload
+            -- :call UltiSnips#RefreshSnippets()
+            vim.api.nvim_create_user_command("EditSnippet", "UltiSnipsEdit", {})
+            vim.api.nvim_create_user_command("ReloadSnippet", "call UltiSnips#RefreshSnippets()", {})
+            vim.api.nvim_create_user_command("Slidev", "UltiSnipsAddFiletypes markdown.slidev", {})
           end,
         },
         config = function()
@@ -65,6 +73,7 @@ return {
           { name = "ultisnips" },
           { name = "path" },
           { name = "nvim_lsp_signature_help" },
+          { name = "render-markdown" },
         },
       })
     end,
