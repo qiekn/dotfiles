@@ -119,7 +119,7 @@ snippet datetime "YYYY-MM-DD hh:mm" w
 endsnippet
 
 snippet todo "TODO comment" bw
-`!p snip.rv=get_comment_format()[0]` TODO: $0 <`!v strftime('%Y-%m-%d %H:%M')`, @qiekn>
+`!p snip.rv=get_comment_format()[0]` TODO: $1 <`!v strftime('%Y-%m-%d %H:%M')`, @qiekn> `!p snip.rv=get_comment_format()[2]`$0
 endsnippet
 
 ##########
