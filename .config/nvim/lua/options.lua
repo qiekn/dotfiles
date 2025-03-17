@@ -45,6 +45,7 @@ set.splitbelow = true
 set.tabstop = 2
 set.shiftwidth = 2
 set.expandtab = true
+set.formatoptions:remove({ "r", "o" }) -- Disable comment newline
 
 set.list = true
 set.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
