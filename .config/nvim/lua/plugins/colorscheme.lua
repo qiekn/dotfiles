@@ -34,6 +34,7 @@ return {
           "NormalNC",
           "NormalFloat",
           "SignColumn",
+          "Folded",
         },
         extra_groups = {
           "NeoTreeNormal",

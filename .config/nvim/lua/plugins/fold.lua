@@ -21,7 +21,8 @@ return {
     event = "BufReadPost",
     opts = {
       provider_selector = function()
-        return { "treesitter", "indent" }
+        return nil
+        -- return { "treesitter", "indent" }
       end,
     },
     init = function()
