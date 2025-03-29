@@ -45,7 +45,12 @@ set.splitbelow = true
 set.tabstop = 2
 set.shiftwidth = 2
 set.expandtab = true
-set.formatoptions:remove({ "r", "o" }) -- Disable comment newline
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.formatoptions:remove({ "r", "o" })
+  end,
+})
 
 set.list = true
 set.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
