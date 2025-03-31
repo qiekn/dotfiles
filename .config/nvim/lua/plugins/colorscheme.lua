@@ -43,7 +43,8 @@ return {
         },
         exclude_groups = {
           "TelescopeSelection",
-          -- "TelescopeSelectionCaret",
+          "TelescopeMatching",
+          "TelescopePreviewLine",
         },
       })
       require("transparent").clear_prefix("Telescope")
