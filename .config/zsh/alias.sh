@@ -13,7 +13,7 @@ alias vx6='cd ~/Projects/2025/xv6-labs-2024/'
 alias espansoconf='cd ~/.config/espanso/match && vim base.yml'
 alias tg="cd /Users/leoua7/Downloads/Telegram\ Desktop && open ."
 alias nvimconf='cd ~/.config/nvim && vim .'
-
+alias mindmap='cd /Users/leoua7/Library/Mobile\ Documents/com~apple~CloudDocs/Mindmap'
 # quicklinks
 alias zshconf='vim ~/.config/zsh/myshrc.sh'
 alias witness='cd /Users/leoua7/Library/Application\ Support/The\ Witness'
