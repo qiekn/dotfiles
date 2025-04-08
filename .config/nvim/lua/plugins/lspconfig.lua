@@ -220,7 +220,7 @@ return {
         clangd = {
           cmd = {
             "clangd",
-            "--function-arg-placeholders",
+            "--function-arg-placeholders=0",
             "--enable-config",
             "--offset-encoding=utf-16",
           },
