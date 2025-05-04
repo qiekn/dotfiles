@@ -4,12 +4,23 @@ local set = vim.opt
 
 set.number = true
 set.relativenumber = true
+set.cursorline = true
 set.mouse = "a"
 
 -- fold
 set.foldmethod = "expr"
 set.foldexpr = "nvim_treesitter#foldexpr()"
 set.foldenable = false
+
+-- indent
+set.tabstop = 2
+set.shiftwidth = 2
+set.expandtab = true
+set.breakindent = true -- Enable break indent
+
+set.list = true
+set.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.cmd("autocmd FileType go setlocal nolist")
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
@@ -18,9 +29,6 @@ set.foldenable = false
 vim.schedule(function()
   vim.opt.clipboard = "unnamedplus"
 end)
-
--- Enable break indent
-set.breakindent = true
 
 -- Save undo history
 set.undofile = true
@@ -42,9 +50,6 @@ set.timeoutlen = 300
 set.splitright = true
 set.splitbelow = true
 
-set.tabstop = 2
-set.shiftwidth = 2
-set.expandtab = true
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
   callback = function()
@@ -52,14 +57,16 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-set.list = true
-set.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-vim.cmd("autocmd FileType go setlocal nolist")
-
 -- Preview substitutions live, as you type!
 set.inccommand = "split"
 
-set.cursorline = true
-
 -- Minimal number of screen lines to keep above and below the cursor.
 set.scrolloff = 10
+
+-- comment :h gc
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "cpp",
+  callback = function()
+    vim.opt_local.commentstring = "// %s"
+  end,
+})
