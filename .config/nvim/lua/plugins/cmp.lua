@@ -58,12 +58,14 @@ return {
           -- Accept ([y]es) the completion.
           ["<C-y>"] = cmp.mapping.confirm({ select = true }),
           ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+          --[[
           ["."] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.confirm({ select = true }) -- 确认补全
             end
             vim.api.nvim_feedkeys(".", "n", true) -- 手动输入 "."
           end, { "i", "s" }),
+          --]]
 
           -- Manually trigger a completion from nvim-cmp.
           ["<C-Space>"] = cmp.mapping.complete({}),
