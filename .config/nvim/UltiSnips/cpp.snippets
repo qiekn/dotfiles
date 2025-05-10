@@ -25,16 +25,27 @@ def write_docstring_args(arglist, snip):
 
 endglobal
 
-snippet ponce "#pragma once include guard"
-# pragma once
+snippet pone "#pragma once include guard" bA
+#pragma once
+
+$0
+endsnippet
+
+snippet incl "include" bA
+#include "$0"
+endsnippet
+
+snippet incc "include" bA
+#include <$0>
 endsnippet
 
 snippet ns "namespace .. (namespace)"
-namespace${1/.+ / /m}${1: `!p snip.rv = snip.basename or "name"`}
-{
+namespace${1/.+ / /m}${1: `!p snip.rv = snip.basename or "name"`} {
 	${VISUAL}$0
-}${1/.+/ \/* /m}$1${1/.+/ *\/ /m}
+}
 endsnippet
+# disable comment
+#}${1/.+/ \/* /m}$1${1/.+/ *\/ /m}
 
 snippet nsa "namespace alias"
 namespace ${1:alias} = ${2:namespace};
@@ -45,10 +56,9 @@ using ${1:namespace}`!p snip.rv = ' ' if t[1] == 'namespace' else ' = ' if t[1] 
 endsnippet
 
 snippet cl "class .. (class)"
-class ${1:`!p snip.rv = snip.basename or "name"`}
-{
+class ${1:`!p snip.rv = snip.basename or "name"`} {
 public:
-	${1/(\w+).*/$1/} (${2:arguments});
+	${1/(\w+).*/$1/} ();
 	virtual ~${1/(\w+).*/$1/} ();
 
 private:
@@ -79,4 +89,50 @@ snippet fnc "Basic c++ doxygen function template" b
 ${1:ReturnType} ${2:FunctionName}(${3:param}) {
 	${0:FunctionBody}
 }
+endsnippet
+
+snippet encl "enum class" bA
+enum class $1 {
+	$0
+};
+endsnippet
+
+snippet st "struct" b
+struct $1 {
+	$0
+};
+endsnippet
+
+snippet ** "single line comment" bA
+/* $0 */
+endsnippet
+
+snippet brief "brief comment" bA
+/** @brief $0 */
+endsnippet
+
+
+#######################################################################
+#                               RAYLIB                                #
+#######################################################################
+
+
+snippet logerr "log error for raylib" bA
+TraceLog(LOG_ERROR, "$0");
+endsnippet
+
+snippet logwarn "log warning for raylib" bA
+TraceLog(LOG_WARNING, "$0");
+endsnippet
+
+snippet loginfo "log info for raylib" bA
+TraceLog(LOG_INFO, "$0");
+endsnippet
+
+snippet debug "log debug for raylib" bA
+TraceLog(LOG_DEBUG, "$0");
+endsnippet
+
+snippet hc "hax color for raylib" w
+Haxc("$1");
 endsnippet
