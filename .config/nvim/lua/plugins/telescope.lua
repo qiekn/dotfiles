@@ -69,7 +69,12 @@ return {
         },
         defaults = {
           file_ignore_patterns = {
-            "%.meta$",
+            "%.meta$", -- used for Unity projects
+            "%.png$",
+            "[/\\]entt.h", -- ignore entt.h, because it's 3MB!! (only used for raylib ecs projects)
+            -- "deps/.*%.h",
+            "deps[/\\]",
+            "3rdparty[/\\]",
           },
         },
       })
@@ -86,6 +91,7 @@ return {
       vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
       vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
       vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
+      vim.keymap.set("n", "<c-i>", builtin.live_grep)
       vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
       vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
       vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
