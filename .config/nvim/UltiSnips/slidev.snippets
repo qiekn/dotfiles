@@ -1,13 +1,22 @@
-priority -50
+priority -60
 
-snippet slide "new slide" b
-
----
-
-$0
+snippet test "test" b
+testtesttest
 endsnippet
 
-snippet layout "layout" b
----
-layout: ${VISUAL:quote}
-endsnippet
+#snippet line "---" b
+#---
+#endsnippet
+#
+#snippet slide "add divider" br
+#\n---\n$0
+#endsnippet
+#
+#snippet next "add divider" wr
+#\n\n---\n
+#endsnippet
+#
+#snippet layout "layout" bA
+#---
+#layout: ${VISUAL:quote}
+#endsnippet
