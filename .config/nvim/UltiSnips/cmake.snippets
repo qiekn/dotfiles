@@ -1,0 +1,58 @@
+snippet INTERFACE "" w
+INTERFACE
+endsnippet
+
+snippet STATIC  "" w
+STATIC
+endsnippet
+
+snippet PUBLIC "" w
+PUBLIC
+endsnippet
+
+snippet PRIVATE "" w
+PRIVATE
+endsnippet
+
+snippet VERSION "" b
+VERSION
+endsnippet
+
+snippet pri "PRIVATE" w
+PRIVATE
+endsnippet
+
+snippet pub "PUBLIC" w
+PUBLIC
+endsnippet
+
+snippet int "INTERFACE" w
+INTERFACE
+endsnippet
+
+snippet ccsrc "${CMAKE_CURRENT_SOURCE_DIR}" wA
+${CMAKE_CURRENT_SOURCE_DIR}
+endsnippet
+
+snippet lsp "Generate Compile_Commmands.json" bA
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+endsnippet
+
+snippet tinclu "target_include_directories()" bA
+target_include_directories($0)
+endsnippet
+
+snippet tlnk "taret_link_libraries()" bA
+taret_link_libraries($0)
+endsnippet
+
+snippet imploc "IMPORTED_LOCATION" bA
+IMPORTED_LOCATION $0
+endsnippet
+
+snippet incldir "INTERFACE_INCLUDE_DIRECTORIES" bA
+INTERFACE_INCLUDE_DIRECTORIES $0
+endsnippet
+
+
+
