@@ -25,7 +25,9 @@ return {
       end,
       fold_virt_text_handler = function(virtText, lnum, endLnum, width, truncate)
         local newVirtText = {}
-        local suffix = " ⋯ (被折叠了喵~)"
+        local foldedLines = endLnum - lnum + 1 -- 计算折叠的行数
+        -- local suffix = " ⋯ "
+        local suffix = " ⋯ (" .. foldedLines .. " 行被折叠了喵~)"
         local sufWidth = vim.fn.strdisplaywidth(suffix)
         local targetWidth = width - sufWidth
         local curWidth = 0
