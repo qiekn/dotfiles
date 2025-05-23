@@ -18,6 +18,11 @@ return {
       document_symbols = {
         follow_cursor = true,
         auto_expand_level = 99,
+        window = {
+          mappings = {
+            ["l"] = "open",
+          },
+        },
       },
       filesystem = {
         window = {
