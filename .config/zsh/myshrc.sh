@@ -13,6 +13,7 @@ nvm () {
 
 # variables
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+export HOMEBREW_AUTO_UPDATE_SECS=604800 # auto update when use brew install every week
 export NVM_NODEJS_ORG_MIRROR="https://mirrors.ustc.edu.cn/node/"
 export NODE_MIRROR="https://mirrors.ustc.edu.cn/node/"
 export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
