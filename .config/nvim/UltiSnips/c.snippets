@@ -9,8 +9,7 @@ def printf_expand_args(snip):
 	at the end.
 	"""
 	
-	# now add so many "," as much as the amount of placeholders
-	amount_placeholders = snip.tabstops[1].current_text.count("%")
+	# now add so many "," as much as the amount of placeholders amount_placeholders = snip.tabstops[1].current_text.count("%")
 
 	output = ""
 
@@ -159,4 +158,28 @@ snip << 2
 ${1}($2) {
 	${0}
 }
+endsnippet
+
+#######################################################################
+#                               Raylib                                #
+#######################################################################
+
+snippet logerr "log error for raylib" bA
+TraceLog(LOG_ERROR, "$0");
+endsnippet
+
+snippet logwarn "log warning for raylib" bA
+TraceLog(LOG_WARNING, "$0");
+endsnippet
+
+snippet loginfo "log info for raylib" bA
+TraceLog(LOG_INFO, "$0");
+endsnippet
+
+snippet debug "log debug for raylib" bA
+TraceLog(LOG_DEBUG, "$0");
+endsnippet
+
+snippet hc "hax color for raylib" w
+Haxc("$1");
 endsnippet
