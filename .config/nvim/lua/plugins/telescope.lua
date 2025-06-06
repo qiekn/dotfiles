@@ -74,6 +74,7 @@ return {
             "[/\\]entt.h", -- ignore entt.h, because it's 3MB!! (only used for raylib ecs projects)
             -- "deps/.*%.h",
             "deps[/\\]",
+            "vendor[/\\]",
             "3rdparty[/\\]",
           },
         },
