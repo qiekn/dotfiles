@@ -35,6 +35,8 @@ matches:
   - trigger: ";`"
     replace: "°"
 
+  - trigger: "。。。"
+    replace: "…"
   # marks
   - trigger: ";amk"
     replace: "<++>"
