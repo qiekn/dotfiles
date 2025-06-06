@@ -68,8 +68,11 @@ yabai -m rule --add app="Listen1" manage=off
 yabai -m rule --add app="MacVim" manage=off
 yabai -m rule --add app="IINA" manage=off
 yabai -m rule --add app="Chrome" title="^DevTools" manage=off
+yabai -m rule --add app="MacZip" manage=off
+
 
 # game dev
+yabai -m rule --add app="game" manage=off
 yabai -m rule --add app="go$" manage=off
 yabai -m rule --add app="^qiekn$" manage=off
 yabai -m rule --add title="Sokoban" manage=off
