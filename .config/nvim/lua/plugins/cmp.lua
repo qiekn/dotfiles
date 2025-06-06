@@ -58,6 +58,7 @@ return {
           -- Accept ([y]es) the completion.
           ["<C-y>"] = cmp.mapping.confirm({ select = true }),
           ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+          ["<Enter>"] = cmp.mapping.confirm({ select = true }),
           --[[
           ["."] = cmp.mapping(function(fallback)
             if cmp.visible() then
