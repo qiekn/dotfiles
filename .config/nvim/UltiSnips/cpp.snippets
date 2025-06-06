@@ -62,7 +62,7 @@ public:
 	virtual ~${1/(\w+).*/$1/} ();
 
 private:
-	${0:/* data */}
+	/* data */
 };
 endsnippet
 
@@ -134,5 +134,13 @@ TraceLog(LOG_DEBUG, "$0");
 endsnippet
 
 snippet hc "hax color for raylib" w
-Haxc("$1");
+Haxc("$0");
+endsnippet
+
+snippet con "clang format on" b
+// clang-format on$0
+endsnippet
+
+snippet coff "clang format off" b
+// clang-format off$0
 endsnippet
