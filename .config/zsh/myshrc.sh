@@ -25,7 +25,7 @@ PATH=$PATH:/usr/local/apache-maven-3.9.4/bin
 PATH=$PATH:/Users/leoua7/.local/bin # Created by `pipx` on 2023-10-12 06:02:49
 
 # cli-tools
-alias tdl="/Users/leoua7/Desktop/dev/telegram_dl/tdl"
+# alias tdl="/Users/leoua7/Desktop/dev/telegram_dl/tdl"
 export TDL_NS=yaoyaoqiekn
 export TDL_PROXY=socks5://127.0.0.1:7890
 
