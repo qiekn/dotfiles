@@ -2,6 +2,11 @@ matches:
   # special
   - trigger: ";kimiuso"
     replace: "君だよ"
+  - trigger: ";l2d"
+    replace: "Löve"
+
+  - trigger: ";at"
+    replace: "@"
 
   # 箭头
   - trigger: ";bul"
@@ -45,4 +50,3 @@ matches:
 
   - triggers: [";star"]
     replace: "☆"
-  
