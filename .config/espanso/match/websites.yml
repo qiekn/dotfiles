@@ -26,3 +26,6 @@ matches:
 
   - trigger: ";mag"
     replace: "magnet:?xt=urn:btih:"
+
+  - trigger: ";game"
+    replace: "qiekn.itch.io/"

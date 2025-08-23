@@ -87,3 +87,8 @@ matches:
   - triggers: [";color"]
     label: "LaTex Color Text"
     replace: "\\color{#f6de58}{}"
+
+  - triggers: [";quote"]
+    label: "special char"
+    replace: "「」"
+  

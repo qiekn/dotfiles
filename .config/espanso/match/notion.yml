@@ -1,0 +1,5 @@
+matches:
+  - trigger: ";h2"
+    replace: "##"
+  - trigger: ";h3"
+    replace: "###"
