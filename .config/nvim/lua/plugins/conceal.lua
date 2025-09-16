@@ -20,7 +20,7 @@ return {
 
     -- generate the scm queries
     -- only need to be run when the Configuration changes
-    conceal.generate_conceals()
+    -- conceal.generate_conceals()
 
     -- bind a <leader>tc to toggle the concealing level
     vim.keymap.set("n", "<leader>tc", function()
