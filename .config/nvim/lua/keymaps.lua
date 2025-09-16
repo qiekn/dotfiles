@@ -31,3 +31,6 @@ end, { expr = true })
 vim.keymap.set("c", "<Up>", function()
   return vim.fn.pumvisible() == 1 and "<C-p>" or "<Up>"
 end, { expr = true })
+
+vim.keymap.set("n", "<leader>mk", "`", { desc = "Goto Marks" })
+vim.keymap.set("n", "<leader>tp", ":LspClangdSwitchSourceHeader<CR>", { desc = "C++: Switch Source <-> Header" })
