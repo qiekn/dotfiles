@@ -69,16 +69,18 @@ yabai -m rule --add app="MacVim" manage=off
 yabai -m rule --add app="IINA" manage=off
 yabai -m rule --add app="Chrome" title="^DevTools" manage=off
 yabai -m rule --add app="MacZip" manage=off
+yabai -m rule --add app="Raycast" manage=off
 
 
 # game dev
 yabai -m rule --add app="game" manage=off
-yabai -m rule --add app="go$" manage=off
-yabai -m rule --add app="^qiekn$" manage=off
-yabai -m rule --add title="Sokoban" manage=off
-yabai -m rule --add title="^baba-is-you$" manage=off
+yabai -m rule --add app="sandbox" manage=off
+yabai -m rule --add app="main" manage=off
+
 yabai -m rule --add title="^game$" manage=off
-yabai -m rule --add title="^QEngine$" manage=off
+yabai -m rule --add title="^Ck Engine$" manage=off
+yabai -m rule --add title="^Ck Engine$" manage=off
+yabai -m rule --add title="^ck.*" manage=off
 
 # -------------------------
 
