@@ -1,5 +1,6 @@
 priority -50
 extends c
+extends ck
 
 # We want to overwrite everything in parent ft.
 priority -49
@@ -141,6 +142,10 @@ snippet con "clang format on" b
 // clang-format on$0
 endsnippet
 
-snippet coff "clang format off" b
+snippet clangon "clang format on" bA
+// clang-format on$0
+endsnippet
+
+snippet clangoff "clang format off" bA
 // clang-format off$0
 endsnippet
