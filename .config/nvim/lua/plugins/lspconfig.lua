@@ -103,6 +103,7 @@ return {
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
+          map("gW", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
           map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
           map("<leader>wps", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orks[P]ace [S]ymbols")
           vim.keymap.set("n", "<c-p>", require("telescope.builtin").lsp_dynamic_workspace_symbols)
@@ -223,6 +224,7 @@ return {
           cmd = {
             "clangd",
             "--function-arg-placeholders=0",
+            "--completion-style=clang",
             "--enable-config",
             "--offset-encoding=utf-16",
             "--compile-commands-dir=build",
@@ -248,6 +250,7 @@ return {
             },
           },
         },
+        bashls = {},
       }
 
       -- Ensure the servers and tools above are installed
