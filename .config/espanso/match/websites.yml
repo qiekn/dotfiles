@@ -29,3 +29,9 @@ matches:
 
   - trigger: ";game"
     replace: "qiekn.itch.io/"
+
+  - trigger: ";itch"
+    replace: "qiekn.itch.io/"
+
+  - trigger: ";notion"
+    replace: "qiekn.notion.site/"
