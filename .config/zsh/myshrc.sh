@@ -23,6 +23,9 @@ PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/Users/leoua7/.nvm/versions/node/v12.14.0/lib/node_modules/hexo-cli/bin
 PATH=$PATH:/usr/local/apache-maven-3.9.4/bin
 PATH=$PATH:/Users/leoua7/.local/bin # Created by `pipx` on 2023-10-12 06:02:49
+# emsdk for compile raylib game to webassembly
+PATH=$PATH:/Users/leoua7/Apps/emsdk
+PATH=$PATH:/Users/leoua7/Apps/emsdk/upstream/emscripten
 
 # cli-tools
 # alias tdl="/Users/leoua7/Desktop/dev/telegram_dl/tdl"
