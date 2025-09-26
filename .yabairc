@@ -70,6 +70,7 @@ yabai -m rule --add app="IINA" manage=off
 yabai -m rule --add app="Chrome" title="^DevTools" manage=off
 yabai -m rule --add app="MacZip" manage=off
 yabai -m rule --add app="Raycast" manage=off
+yabai -m rule --add app="CrossOver" manage=off
 
 
 # game dev
