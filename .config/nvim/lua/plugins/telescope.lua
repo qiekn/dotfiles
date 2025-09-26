@@ -100,6 +100,7 @@ return {
       vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
       vim.keymap.set("n", "<leader>so", builtin.vim_options, { desc = "[S]et vim [O]ptions" })
       vim.keymap.set("n", "<leader>sc", builtin.commands, { desc = "[S]earch vim [C]ommands" })
+      vim.keymap.set("n", "<leader>cc", builtin.commands, { desc = "[S]earch vim [C]ommands" })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set("n", "<leader>/", function()
