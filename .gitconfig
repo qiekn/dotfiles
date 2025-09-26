@@ -1,0 +1,24 @@
+[safe]
+  directory = /opt/homebrew/Library/Taps/homebrew/homebrew-core
+  directory = /opt/homebrew/Library/Taps/homebrew/homebrew-cask
+[user]
+  name = qiekn
+  email = qiekndev@gmail.com
+[init]
+  defaultBranch = main
+[core]
+  editor = nvim
+  excludesfile = ~/.gitignore_global
+[color]
+  ui = true
+[https]
+  #proxy = http://127.0.0.1:7890
+[alias]
+  co = checkout
+  br = branch
+  st = stash
+  rb = rebase
+  cp = cherry-pick
+  lg = log --oneline --abbrev --author=qiekn
+[diff]
+  tool = nvimdiff
