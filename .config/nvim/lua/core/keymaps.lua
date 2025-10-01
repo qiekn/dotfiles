@@ -24,6 +24,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
+-- Scroll UP / DOWN
+-- vim.keymap.set("n", "<c-d>", "<c-d>zz")
+-- vim.keymap.set("n", "<c-u>", "<c-u>zz")
+
 -- Vim command line mode navigation with up and down
 vim.keymap.set("c", "<Down>", function()
   return vim.fn.pumvisible() == 1 and "<C-n>" or "<Down>"

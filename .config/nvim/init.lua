@@ -3,19 +3,19 @@ vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true
 
-require("options")
+require("core.options")
 
 -- [[ Install `lazy.nvim` plugin manager ]]
-require("lazy-bootstrap")
+require("core.lazy-bootstrap")
 
 -- [[ Configure and install plugins ]]
-require("lazy-plugins")
+require("core.lazy-plugins")
 
 -- [[ Custom Keymaps ]]
-require("keymaps")
+require("core.keymaps")
 
 -- [[ UI Style ]]
-require("scheme")
+require("core.scheme")
 
 -- [[ How to quit Vim ]]
-require("commands")
+require("core.commands")
