@@ -23,6 +23,12 @@ def write_docstring_args(arglist, snip):
 	else:
 		snip.rv = args[0]
 
+# snake_cask to CamelCase
+def classname_from_filename(snip):
+    import re
+    name = snip.basename or "name"
+    camel = ''.join([w.capitalize() for w in re.split(r'[_\s]+', name)])
+    snip.rv = camel
 
 endglobal
 
@@ -41,12 +47,18 @@ snippet incc "include" bA
 endsnippet
 
 snippet ns "namespace .. (namespace)"
-namespace${1/.+ / /m}${1: `!p snip.rv = snip.basename or "name"`} {
+namespace ${1:ck} {
 	${VISUAL}$0
 }
 endsnippet
 # disable comment
 #}${1/.+/ \/* /m}$1${1/.+/ *\/ /m}
+
+snippet nsck "namespace ck" bA
+namespace ck {
+	$0
+}
+endsnippet
 
 snippet nsa "namespace alias"
 namespace ${1:alias} = ${2:namespace};
@@ -57,11 +69,11 @@ using ${1:namespace}`!p snip.rv = ' ' if t[1] == 'namespace' else ' = ' if t[1] 
 endsnippet
 
 snippet cl "class .. (class)"
-class ${1:`!p snip.rv = snip.basename or "name"`} {
+class ${1:`!p classname_from_filename(snip) or "name"`} {
 public:
-	${1/(\w+).*/$1/} ();
-	virtual ~${1/(\w+).*/$1/} ();
-
+	${1/(\w+).*/$1/}();
+	virtual ~${1/(\w+).*/$1/}();
+	$0
 private:
 	/* data */
 };
