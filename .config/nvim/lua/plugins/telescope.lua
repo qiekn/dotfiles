@@ -102,6 +102,9 @@ return {
       vim.keymap.set("n", "<leader>sc", builtin.commands, { desc = "[S]earch vim [C]ommands" })
       vim.keymap.set("n", "<leader>cc", builtin.commands, { desc = "[S]earch vim [C]ommands" })
 
+      vim.keymap.set("n", "<esc>p", builtin.find_files, { desc = "" })
+      vim.keymap.set("n", "<esc>P", builtin.commands, { desc = "" })
+
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set("n", "<leader>/", function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
