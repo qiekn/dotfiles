@@ -50,3 +50,21 @@ matches:
 
   - triggers: [";star"]
     replace: "☆"
+
+  # macOS
+  - trigger: ";cmd"
+    replace: "⌘"
+  - trigger: ";option"
+    replace: "⌥"
+  - trigger: ";shift"
+    replace: "⇧"
+  - trigger: ";ctrl"
+    replace: "⌃"
+  - trigger: ";enter"
+    replace: "⏎"
+  - trigger: ";esc"
+    replace: "⎋"
+  - trigger: ";tab"
+    replace: "⇥"
+  - trigger: ";backtab"
+    replace: "⇤"

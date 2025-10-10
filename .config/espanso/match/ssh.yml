@@ -1,0 +1,3 @@
+matches:
+  - trigger: ";ip"
+    replace: "47.100.237.182"
