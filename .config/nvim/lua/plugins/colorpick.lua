@@ -8,7 +8,7 @@ return {
         -- Your preferred settings
         -- Example: enable highlighter
         highlighter = {
-          auto_enable = true,
+          auto_enable = false,
           lsp = true,
         },
       })
