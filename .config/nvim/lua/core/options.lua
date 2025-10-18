@@ -73,4 +73,4 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Conceal
 vim.opt.conceallevel = 2
-vim.opt.concealcursor = "nv"
+-- vim.opt.concealcursor = "nc"
