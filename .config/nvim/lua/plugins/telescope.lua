@@ -102,6 +102,8 @@ return {
       vim.keymap.set("n", "<leader>sc", builtin.commands, { desc = "[S]earch vim [C]ommands" })
       vim.keymap.set("n", "<leader>cc", builtin.commands, { desc = "[S]earch vim [C]ommands" })
 
+      vim.keymap.set("n", "<esc>o", builtin.buffers, { desc = "" })
+      vim.keymap.set("n", "<esc>f", builtin.current_buffer_fuzzy_find, { desc = "" })
       vim.keymap.set("n", "<esc>p", builtin.find_files, { desc = "" })
       vim.keymap.set("n", "<esc>P", builtin.commands, { desc = "" })
 
@@ -109,7 +111,11 @@ return {
       vim.keymap.set("n", "<leader>/", function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
         builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-          previewer = false,
+          previewer = true,
+          layout_config = {
+            width = 0.7,
+            height = 0.3,
+          },
         }))
       end, { desc = "[/] Fuzzily search in current buffer" })
 
