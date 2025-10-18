@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(build/**)",
+      "Read(.cache/**)",
+      "Read(node_modules/**)"
+    ]
+  }
+}
