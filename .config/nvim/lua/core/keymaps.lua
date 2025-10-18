@@ -1,6 +1,11 @@
 -- [[ Basic Keymaps ]]
 -- See `:help vim.keymap.set()`
 
+-- Execute cursor line's or whole buffer's lua code
+vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
+vim.keymap.set("n", "<space>x", ":.lua<CR>")
+vim.keymap.set("v", "<space>x", ":lua<CR>")
+
 -- Search Highlight
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
