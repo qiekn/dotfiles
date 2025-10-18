@@ -68,3 +68,7 @@ matches:
     replace: "⇥"
   - trigger: ";backtab"
     replace: "⇤"
+
+  # nerdfont
+  - trigger: ";duck"
+    replace: "󰇥"

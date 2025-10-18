@@ -1,0 +1,24 @@
+matches:
+  - trigger: ";handleft"
+    replace: "👈"
+  - trigger: ";handright"
+    replace: "👉"
+  - trigger: ";handup"
+    replace: "👆"
+  - trigger: ";handdown"
+    replace: "👇"
+  - trigger: ";ok"
+    replace: "👌"
+
+  - trigger: ";thumbsup"
+    replace: "👍"
+  - trigger: ";good"
+    replace: "👍"
+  - trigger: ";verygood"
+    replace: "👍"
+
+  - trigger: ";hit"
+    replace: "👊"
+
+  - trigger: ";eg"
+    replace: "🌰"
