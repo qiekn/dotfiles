@@ -1,5 +1,24 @@
-vim.lsp.enable("lua_ls")
+-- Languages I actually use
 vim.lsp.enable("clangd")
+-- vim.lsp.enable("csharp_ls")
+vim.lsp.enable("gopls")
+vim.lsp.enable("pyright")
+vim.lsp.enable("lua_ls")
+
+-- Toolkit
+vim.lsp.enable("cmake")
+vim.lsp.enable("bash_ls")
+vim.lsp.enable("json")
+
+-- Graphics / Shader languages
+vim.lsp.enable("glsl_analyzer")
+
+-- Front end
+vim.lsp.enable("html")
+vim.lsp.enable("scss")
+vim.lsp.enable("ts_ls")
+vim.lsp.enable("tailwindcss")
+vim.lsp.enable("emmet")
 
 -- Brief aside: **What is LSP?**
 --

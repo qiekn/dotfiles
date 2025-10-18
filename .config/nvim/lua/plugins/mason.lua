@@ -25,13 +25,22 @@ return {
       ensure_installed = {
         "lua-language-server",
         "stylua", -- Used to format Lua code
+        -- C++ & Graphics
         "clangd",
+        "glsl_analyzer",
+        -- Other languages
         "gopls",
         "pyright",
         "json-lsp",
+        -- Utils
         "cmake-language-server",
         "bash-language-server",
+        -- frontend
+        "html-lsp",
+        "css-lsp",
         "typescript-language-server",
+        "tailwindcss-language-server",
+        "emmet-language-server",
       },
     },
   },
