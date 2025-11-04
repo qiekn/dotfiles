@@ -49,3 +49,5 @@ end, { expr = true })
 
 -- ----------------------------------------------------------------------------: Termianl Mode
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
+vim.keymap.set("n", "<leader>mk", "`", { desc = "Goto Marks" })
+vim.keymap.set("n", "<leader>tp", ":LspClangdSwitchSourceHeader<CR>", { desc = "C++: Switch Source <-> Header" })
