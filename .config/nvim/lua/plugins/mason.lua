@@ -29,7 +29,7 @@ return {
         "clangd",
         "glsl_analyzer",
         -- Other languages
-        "gopls",
+        -- "gopls", -- install go at first
         "pyright",
         "json-lsp",
         -- Utils
