@@ -8,7 +8,7 @@
 ## Install
 
 ```shell
-git clone git@github.com:qiekn/dotfiles.git ~/.dotfiles
+git clone --recursive git@github.com:qiekn/dotfiles.git ~/.dotfiles
 cd .dotfiles
-stow .
+stow --adpot .
 ```
