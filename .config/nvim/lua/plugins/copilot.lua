@@ -1,4 +1,5 @@
 return {
+  --[[
   {
     "github/copilot.vim",
     config = function()
@@ -12,4 +13,5 @@ return {
       -- vim.g.copilot_enabled = false
     end,
   },
+  --]]
 }
