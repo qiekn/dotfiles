@@ -69,6 +69,7 @@ return {
     "--function-arg-placeholders=0",
     "--offset-encoding=utf-16",
     "--enable-config",
+    "--query-driver=C:/msys64/ucrt64/bin/clang++.exe", -- for Windows MSYS2 UCRT64
   },
   filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
   root_markers = {
