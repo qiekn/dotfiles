@@ -74,3 +74,9 @@ vim.api.nvim_create_autocmd("FileType", {
 -- Conceal
 vim.opt.conceallevel = 2
 -- vim.opt.concealcursor = "nc"
+
+-- File Encoding
+vim.opt.fileencodings = { "utf-8", "gb2312", "gbk", "gb18030" }
+vim.opt.fileencoding = "utf-8"
+vim.opt.encoding = "utf-8"
+vim.opt.fileformat = "unix"
