@@ -5,6 +5,10 @@ if [[ -n "$MSYSTEM" || "$(uname -s)" =~ (MSYS|MINGW|UCRT|CYGWIN) ]]; then
   export XDG_STATE_HOME="$HOME/.local/state"
   export XDG_CACHE_HOME="$HOME/.cache"
 
+  # PATH
+  export PATH=$PATH:"/c/Program Files/Git/cmd"
+  export PATH=$PATH:"$HOME/.local/bin/"
+
   unset APPDATA
   unset LOCALAPPDATA
   unset USERPROFILE
@@ -16,11 +20,9 @@ if [[ -n "$MSYSTEM" || "$(uname -s)" =~ (MSYS|MINGW|UCRT|CYGWIN) ]]; then
   export CC=clang
   export CXX=clang++
 
+  # Alias
   alias open="explorer"
   alias make="mingw32-make"
-  alias lg="/C/ProgramData/chocolatey/bin/lazygit.exe"
+  alias lg="lazygit"
 
-  # PATH
-  export PATH=$PATH:"/c/Program Files/Git/cmd"
-  export PATH=$PATH:"~/.local/bin/"
 fi

@@ -73,6 +73,9 @@ export ZSH_CUSTOM="$HOME/.config/zsh"
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git zsh-vi-mode)
 
+# HACK: fix msys2 git path 
+export PATH=$PATH:"/c/Program Files/Git/cmd"
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
