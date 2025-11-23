@@ -129,4 +129,18 @@ snippet uuid "Random UUID" w
 `!p if not snip.c: import uuid; snip.rv = str(uuid.uuid4())`
 endsnippet
 
+snippet sep "Separator line to column 80" b
+`!p
+prefix = get_comment_format()[0]
+if prefix:
+	prefix = prefix.strip() + ' '
+else:
+	prefix = "-"
+suffix = ":"
+
+count = 80 - len(prefix) - len(suffix)
+snip.rv = prefix + ("-" * count) + suffix
+` $0
+endsnippet
+
 # vim:ft=snippets:
