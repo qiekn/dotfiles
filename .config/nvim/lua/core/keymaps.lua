@@ -33,6 +33,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- vim.keymap.set("n", "<c-d>", "<c-d>zz")
 -- vim.keymap.set("n", "<c-u>", "<c-u>zz")
 
+vim.keymap.set("n", "<leader>mk", "`", { desc = "Goto Marks" })
+
+-- clangd
+vim.keymap.set("n", "<leader>tp", ":LspClangdSwitchSourceHeader<CR>", { desc = "C++: Switch Source <-> Header" })
+
+-- ----------------------------------------------------------------------------: Command Mode
 -- Vim command line mode navigation with up and down
 vim.keymap.set("c", "<Down>", function()
   return vim.fn.pumvisible() == 1 and "<C-n>" or "<Down>"
@@ -41,5 +47,5 @@ vim.keymap.set("c", "<Up>", function()
   return vim.fn.pumvisible() == 1 and "<C-p>" or "<Up>"
 end, { expr = true })
 
-vim.keymap.set("n", "<leader>mk", "`", { desc = "Goto Marks" })
-vim.keymap.set("n", "<leader>tp", ":LspClangdSwitchSourceHeader<CR>", { desc = "C++: Switch Source <-> Header" })
+-- ----------------------------------------------------------------------------: Termianl Mode
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
