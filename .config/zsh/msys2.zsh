@@ -6,13 +6,21 @@ if [[ -n "$MSYSTEM" || "$(uname -s)" =~ (MSYS|MINGW|UCRT|CYGWIN) ]]; then
   export XDG_CACHE_HOME="$HOME/.cache"
 
   # PATH
+
   export PATH=$PATH:"/c/Program Files/Git/cmd"
+  export PATH=$PATH:"/c/Apps/MiKTex/texmfs/install/miktex/bin/x64"
+  export PATH=$PATH:"/c/Apps/SumatraPDF/"
+  export PATH=$PATH:"/c/Apps/shortcuts/"
   export PATH=$PATH:"$HOME/.local/bin/"
 
-  unset APPDATA
-  unset LOCALAPPDATA
-  unset USERPROFILE
+  # unset APPDATA
+  # unset LOCALAPPDATA
+  # unset USERPROFILE
 
+
+  # Windows package manager: Scoop
+  export PATH="$PATH:$USERPROFILE/scoop/shims"
+  export PATH="$PATH:$USERPROFILE/scoop/apps/rustup/current/.cargo/bin"
   # ln -s
   export MSYS=winsymlinks:nativestrict
 
