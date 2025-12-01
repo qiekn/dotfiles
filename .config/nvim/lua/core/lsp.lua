@@ -9,7 +9,8 @@ vim.lsp.enable("lua_ls")
 vim.lsp.enable("texlab")
 
 -- Toolkit
-vim.lsp.enable("cmake")
+-- vim.lsp.enable("cmake")
+vim.lsp.enable("neocmake")
 vim.lsp.enable("bash_ls")
 vim.lsp.enable("json")
 
