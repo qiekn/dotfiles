@@ -5,6 +5,9 @@ if [[ -n "$MSYSTEM" || "$(uname -s)" =~ (MSYS|MINGW|UCRT|CYGWIN) ]]; then
   export XDG_STATE_HOME="$HOME/.local/state"
   export XDG_CACHE_HOME="$HOME/.cache"
 
+  # Env
+  export YAZI_CONFIG_HOME="$HOME/.config/yazi"
+
   # PATH
 
   export PATH=$PATH:"/c/Program Files/Git/cmd"
