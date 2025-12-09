@@ -1,0 +1,7 @@
+keybinding:
+  universal:
+    rangeSelectDown: <disabled>
+    rangeSelectUp: <disabled>
+  commits:
+    moveDownCommit: 'J'
+    moveUpCommit: 'K'
