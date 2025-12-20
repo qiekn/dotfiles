@@ -11,8 +11,11 @@ if [[ -n "$MSYSTEM" || "$(uname -s)" =~ (MSYS|MINGW|UCRT|CYGWIN) ]]; then
   # PATH
 
   export PATH=$PATH:"/c/Program Files/Git/cmd"
+  export PATH=$PATH:"/c/Program Files/dotnet/"
   export PATH=$PATH:"/c/Apps/MiKTex/texmfs/install/miktex/bin/x64"
   export PATH=$PATH:"/c/Apps/SumatraPDF/"
+  export PATH=$PATH:"/c/Apps/nodejs/"
+  export PATH=$PATH:"/c/Users/user/AppData/Roaming/npm/"
   export PATH=$PATH:"/c/Apps/shortcuts/"
   export PATH=$PATH:"$HOME/.local/bin/"
 
@@ -35,5 +38,7 @@ if [[ -n "$MSYSTEM" || "$(uname -s)" =~ (MSYS|MINGW|UCRT|CYGWIN) ]]; then
   alias open="explorer"
   alias make="mingw32-make"
   alias lg="lazygit"
+
+  alias winhome="/c/Users/user"
 
 fi
