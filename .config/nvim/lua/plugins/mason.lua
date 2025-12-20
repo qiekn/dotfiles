@@ -41,6 +41,7 @@ return {
         "typescript-language-server",
         "tailwindcss-language-server",
         "emmet-language-server",
+        "tex-fmt",
       },
     },
   },
