@@ -11,9 +11,24 @@ return {
   },
   {
     "MeanderingProgrammer/render-markdown.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
     opts = {
       default = false,
+      code = {
+        width = "block",
+        min_width = 80,
+        border = "thin",
+        left_pad = 1,
+        right_pad = 1,
+        language_icon = true,
+        language_name = true,
+      },
+      anti_conceal = {
+        disable_mode = { "n" },
+        ignore = {
+          head_border = true,
+          head_background = true,
+        },
+      },
     },
   },
 }
