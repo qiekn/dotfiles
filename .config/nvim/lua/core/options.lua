@@ -27,7 +27,7 @@ vim.cmd("autocmd FileType go setlocal nolist")
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.opt.clipboard = "unnamedplus"
+  set.clipboard = "unnamedplus"
 end)
 
 -- Save undo history
@@ -72,17 +72,17 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- Conceal
-vim.opt.conceallevel = 2
--- vim.opt.concealcursor = "nc"
+set.conceallevel = 2
+-- set.concealcursor = "nc"
 
 -- File Encoding
-vim.opt.fileencodings = { "utf-8", "gb2312", "gbk", "gb18030" }
-vim.opt.fileencoding = "utf-8"
-vim.opt.encoding = "utf-8"
-vim.opt.fileformat = "unix"
+set.fileencodings = { "utf-8", "gb2312", "gbk", "gb18030" }
+set.fileencoding = "utf-8"
+set.encoding = "utf-8"
+set.fileformat = "unix"
 
 -- Msys2 shell
-vim.opt.shellcmdflag = "-c"
-vim.opt.shellquote = ""
-vim.opt.shellxquote = ""
-vim.opt.shellslash = true
+set.shellcmdflag = "-c"
+set.shellquote = ""
+set.shellxquote = ""
+set.shellslash = true
