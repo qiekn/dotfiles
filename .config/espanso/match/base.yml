@@ -33,7 +33,7 @@ matches:
         params:
           format: "%Y-%m-%d %H:%M:%S"
 
-  - trigger: "timemark"
+  - trigger: ";dtt"
     replace: "{{timemark}}"
     vars:
       - name: timemark
