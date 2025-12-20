@@ -1,5 +1,18 @@
+# Used for jsx file
 snippet <> "blank" b
 <>
 	$0
 </>
+endsnippet
+
+snippet pignore "prettier-ignore" bA
+// prettier-ignore
+endsnippet
+
+snippet log "console.log" bA
+console.log($0);
+endsnippet
+
+snippet "pt(\d+)" "separator" rA
+console.log("---------------: ${0:part `!p snip.rv = match.group(1)`}");
 endsnippet
