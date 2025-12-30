@@ -90,6 +90,11 @@ snippet link "Link"
 endsnippet
 
 snippet img "Image"
+![${1:pic alt}](${2:src})$0
+endsnippet
+
+# the 3rd tab can clean `"opt title"` easily
+snippet imga "Image with opt title"
 ![${1:pic alt}](${2:path}${3/.+/ "/}${3:opt title}${3/.+/"/})$0
 endsnippet
 

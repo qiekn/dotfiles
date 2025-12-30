@@ -1,3 +1,6 @@
 matches:
   - trigger: ";ip"
     replace: "47.100.237.182"
+  - trigger: ";repo"
+    replace: "git@github.com:qiekn/"
+
