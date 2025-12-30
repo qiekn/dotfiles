@@ -16,6 +16,9 @@ return {
     opts = {
       notify_on_error = false,
       format_on_save = function(bufnr)
+        -- debug
+        print("Filetype: " .. vim.bo[bufnr].filetype)
+
         -- Disable format third part library code if filepath contains 'deps' or 'vendors'
         local filepath = vim.api.nvim_buf_get_name(bufnr)
         local is_3rdparty = filepath:find("deps[/\\]") or filepath:find("vendors[/\\]")
@@ -26,18 +29,15 @@ return {
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, json = true }
-        local lsp_format_opt
-
+        local disable_filetypes = { c = true, json = true, cpp = true }
         if disable_filetypes[vim.bo[bufnr].filetype] then
-          lsp_format_opt = "never"
+          return nil
         else
-          lsp_format_opt = "fallback"
+          return {
+            timeout_ms = 500,
+            lsp_format = "fallback",
+          }
         end
-        return {
-          timeout_ms = 500,
-          lsp_format = lsp_format_opt,
-        }
       end,
       formatters_by_ft = {
         lua = { "stylua" },
