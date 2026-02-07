@@ -35,3 +35,6 @@ export TDL_PROXY=socks5://127.0.0.1:7890
 
 # -------------------------------------------
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
+# python
+export PYTHONSTARTUP=$HOME/.config/python/startup.py
