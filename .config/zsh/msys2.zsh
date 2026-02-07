@@ -9,12 +9,14 @@ if [[ -n "$MSYSTEM" || "$(uname -s)" =~ (MSYS|MINGW|UCRT|CYGWIN) ]]; then
   export YAZI_CONFIG_HOME="$HOME/.config/yazi"
 
   # PATH
+  export WINHOME="/c/Users/user"
 
   export PATH=$PATH:"/c/Program Files/Git/cmd"
   export PATH=$PATH:"/c/Program Files/dotnet/"
   export PATH=$PATH:"/c/Apps/MiKTex/texmfs/install/miktex/bin/x64"
   export PATH=$PATH:"/c/Apps/SumatraPDF/"
   export PATH=$PATH:"/c/Apps/nodejs/"
+  export PATH=$PATH:"/c/Apps/Go/bin"
   export PATH=$PATH:"/c/Users/user/AppData/Roaming/npm/"
   export PATH=$PATH:"/c/Apps/shortcuts/"
   export PATH=$PATH:"$HOME/.local/bin/"
@@ -40,9 +42,11 @@ if [[ -n "$MSYSTEM" || "$(uname -s)" =~ (MSYS|MINGW|UCRT|CYGWIN) ]]; then
   alias make="mingw32-make"
   alias lg="lazygit"
 
-  alias winhome="/c/Users/user"
-  alias desktop="/c/Users/user/Desktop"
+  alias winhome="cd $WINHOME"
+  alias desktop="cd $WINHOME/Desktop"
   alias emacs="/c/msys64/mingw64/bin/runemacs.exe"
+  alias code="winhome/"
+  alias code="$WINHOME/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code" # vscode
 
   function windata() { cd $APPDATA }
 
