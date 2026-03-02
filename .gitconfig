@@ -20,6 +20,7 @@
   rb = rebase
   cp = cherry-pick
   lg = log --oneline --abbrev --author=qiekn
+  browse = "!f() { \n  url=$(git remote get-url origin);\n  url=${url/git@github.com:/https://github.com/};\n  url=${url%.git};\n  start \"$url\"; \n}; f"
 [diff]
   tool = nvimdiff
 [filter "lfs"]
