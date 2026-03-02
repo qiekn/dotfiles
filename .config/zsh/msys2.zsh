@@ -10,6 +10,7 @@ if [[ -n "$MSYSTEM" || "$(uname -s)" =~ (MSYS|MINGW|UCRT|CYGWIN) ]]; then
 
   # PATH
   export WINHOME="/c/Users/user"
+  export APPS="/c/Apps"
 
   export PATH=$PATH:"/c/Program Files/Git/cmd"
   export PATH=$PATH:"/c/Program Files/dotnet/"
@@ -23,6 +24,9 @@ if [[ -n "$MSYSTEM" || "$(uname -s)" =~ (MSYS|MINGW|UCRT|CYGWIN) ]]; then
   export PATH=$PATH:"$HOME/.local/bin/"
   export PATH=$PATH:"$HOME/.local/bin/"
   export PATH=$PATH:"$WINHOME/.local/bin/"
+
+  # APPS
+  export PATH=$PATH:"$APPS/vgmstream-win64"
 
   # unset APPDATA
   # unset LOCALAPPDATA
