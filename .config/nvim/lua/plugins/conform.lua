@@ -33,6 +33,7 @@ return {
           c = true,
           json = true,
           cpp = true,
+          glsl = true,
         }
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
