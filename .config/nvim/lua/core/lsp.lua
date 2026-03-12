@@ -16,6 +16,7 @@ vim.lsp.enable("json")
 
 -- Graphics / Shader languages
 vim.lsp.enable("glsl_analyzer")
+vim.lsp.enable("slang")
 
 -- Front end
 vim.lsp.enable("html")
