@@ -1,5 +1,3 @@
-set -o vi
-
 # lazy-function
 nvm () {
   export NVM_DIR="$HOME/.nvm"
