@@ -25,7 +25,7 @@ return {
             ["[["] = { query = "@class.outer", desc = "Prev class stasrt" },
           },
           goto_previous_end = {
-            ["[F"] = { query = "@function.outer", desc = "Prev function send" },
+            ["[F"] = { query = "@function.outer", desc = "Prev function end" },
             ["[]"] = { query = "@class.outer", desc = "Prev class end" },
           },
         },
