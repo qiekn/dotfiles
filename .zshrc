@@ -100,3 +100,6 @@ export EDITOR='nvim'
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/opt/homebrew/opt/bison/bin:$PATH"
 export PATH="/opt/homebrew/opt/flex/bin:$PATH"
+
+# --- Zoxide ---
+command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
