@@ -12,30 +12,24 @@ if [[ -n "$MSYSTEM" || "$(uname -s)" =~ (MSYS|MINGW|UCRT|CYGWIN) ]]; then
   export WINHOME="/c/Users/user"
   export APPS="/c/Apps"
 
-  export PATH=$PATH:"/c/Program Files/Git/cmd"
-  export PATH=$PATH:"/c/Program Files/dotnet/"
-  export PATH=$PATH:"/c/Apps/MiKTex/texmfs/install/miktex/bin/x64"
-  export PATH=$PATH:"/c/Apps/SumatraPDF/"
-  export PATH=$PATH:"/c/Apps/nodejs/"
-  export PATH=$PATH:"/c/Apps/Go/bin"
-  export PATH=$PATH:"/c/Users/user/AppData/Roaming/npm/"
-  export PATH=$PATH:"/c/Apps/shortcuts/"
-  export PATH=$PATH:"$HOME/.local/share/pnpm"
-  export PATH=$PATH:"$HOME/.local/bin/"
-  export PATH=$PATH:"$HOME/.local/bin/"
-  export PATH=$PATH:"$WINHOME/.local/bin/"
-
-  # APPS
-  export PATH=$PATH:"$APPS/vgmstream-win64"
-
-  # unset APPDATA
-  # unset LOCALAPPDATA
-  # unset USERPROFILE
-
-
-  # Windows package manager: Scoop
-  export PATH="$PATH:$USERPROFILE/scoop/shims"
-  export PATH="$PATH:$USERPROFILE/scoop/apps/rustup/current/.cargo/bin"
+  path+=(
+    "/c/Program Files/Git/cmd"
+    "/c/Program Files/dotnet/"
+    "$APPS/nodejs"
+    "$APPS/Go/bin"
+    "$APPS/MiKTex/texmfs/install/miktex/bin/x64"
+    "$APPS/SumatraPDF"
+    "$APPS/shortcuts"
+    "$APPS/vgmstream-win64"
+    "$APPS/tdl"
+    "/c/VulkanSDK/1.4.341.1/Bin"
+    "/c/Users/user/AppData/Roaming/npm"
+    "$HOME/.local/share/pnpm"
+    "$HOME/.local/bin"
+    "$WINHOME/.local/bin"
+    "$USERPROFILE/scoop/shims"
+    "$USERPROFILE/scoop/apps/rustup/current/.cargo/bin"
+  )
   # ln -s
   export MSYS=winsymlinks:nativestrict
 

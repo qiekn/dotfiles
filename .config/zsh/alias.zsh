@@ -26,3 +26,4 @@ alias py='python3'
 alias lg="lazygit"
 alias love="/Applications/love.app/Contents/MacOS/love"
 alias pm="pnpm"
+alias zensical="uv run zensical"
