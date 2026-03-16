@@ -68,5 +68,5 @@ export PATH=$PATH:"/c/Program Files/Git/cmd"
 
 # --- Zoxide ---
 # cargo install zoxide
-# you can type zi to use fzf
+# you can type ci to use fzf
 eval "$(zoxide init zsh --cmd c)"
