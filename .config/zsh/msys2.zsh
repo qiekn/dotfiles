@@ -67,4 +67,8 @@ if [[ -n "$MSYSTEM" || "$(uname -s)" =~ (MSYS|MINGW|UCRT|CYGWIN) ]]; then
     add-zsh-hook precmd tell_wt_cwd
   fi
 
+  xv6_env() {
+    export PATH=/mingw64/bin:$PATH
+  }
+
 fi
