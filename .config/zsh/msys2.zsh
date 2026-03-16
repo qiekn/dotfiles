@@ -48,6 +48,12 @@ if [[ -n "$MSYSTEM" || "$(uname -s)" =~ (MSYS|MINGW|UCRT|CYGWIN) ]]; then
   alias emacs="/c/msys64/mingw64/bin/runemacs.exe"
   alias code="$WINHOME/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code" # vscode
 
+  alias gdb='gdb -q'
+  alias gdb-multiarch='gdb-multiarch -q'
+  alias debug='gdb-multiarch -q'
+
+  # Functions
+
   function windata() { cd $APPDATA }
 
   # Fix tmux
