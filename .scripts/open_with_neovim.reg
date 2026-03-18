@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\OpenWithNvim2]
+@="Open with Neovim"
+"Icon"="C:\\msys64\\ucrt64.exe"
+
+[HKEY_CLASSES_ROOT\*\shell\OpenWithNvim2\command]
+@="wt.exe -p "UCRT64" nvim "%1""
