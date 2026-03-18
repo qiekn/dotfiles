@@ -1,0 +1,23 @@
+" ln -s /home/user/.dotfiles/.config/vsvim/.vsvimrc /c/Users/user/.vsvimrc
+set rnu
+
+set sw=4
+set ts=4
+
+set hlsearch
+set ignorecase
+set incsearch
+
+set clipboard=unnamed
+
+set cursorline
+
+" keymaps
+nnoremap gd :vsc Edit.GoToDefinition<CR>
+nnoremap gI :vsc Edit.GoToImplementation<CR>
+nnoremap K :vsc Edit.PeekDefinition<CR>
+
+nnoremap <c-o> :vsc View.NavigateBackward<CR>
+nnoremap <c-i> :vsc View.NavigateBackward<CR>
+
+nnoremap <Esc> :nohlsearch<CR>
