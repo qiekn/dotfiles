@@ -80,26 +80,5 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
-export EDITOR='nvim'
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/opt/homebrew/opt/bison/bin:$PATH"
 export PATH="/opt/homebrew/opt/flex/bin:$PATH"
-
-# --- Zoxide ---
-command -v zoxide &>/dev/null && eval "$(zoxide init zsh --cmd c)"

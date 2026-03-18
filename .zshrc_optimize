@@ -1,22 +1,22 @@
-# --- History ---
+## History
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt share_history hist_ignore_dups hist_ignore_space hist_reduce_blanks
 
-# --- Completion ---
+## Completion
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'  # case-insensitive
 
-# --- Colors ---
+## Colors
 autoload -U colors && colors
 
-# --- Vi mode ---
+## Vi mode
 bindkey -v
 export KEYTIMEOUT=1
 
-# Vi mode cursor: beam for insert, block for normal
+# beam for insert, block for normal
 zle-keymap-select() {
   if [[ $KEYMAP == vicmd ]]; then
     echo -ne '\e[2 q'  # block
@@ -28,14 +28,14 @@ zle-line-init() { echo -ne '\e[6 q' }
 zle -N zle-keymap-select
 zle -N zle-line-init
 
-# --- Key bindings ---
+## Key bindings
 bindkey '^[[A' up-line-or-search        # Up
 bindkey '^[[B' down-line-or-search      # Down
 bindkey '^[[H' beginning-of-line        # Home
 bindkey '^[[F' end-of-line              # End
 bindkey '^[[3~' delete-char             # Delete
 
-# --- Git prompt (替代 omz git.zsh) ---
+## Git prompt
 git_prompt_info() {
   local branch
   branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
@@ -46,27 +46,14 @@ git_prompt_info() {
   echo "%{$fg_bold[blue]%}git:(%{$fg[red]%}${branch}%{$fg[blue]%})%{$fg[yellow]%}${dirty}%{$reset_color%} "
 }
 
-# --- Prompt (robbyrussell 风格) ---
+## Prompt (robbyrussell)
 setopt prompt_subst
 PROMPT='%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
 
-# --- Directory options ---
+## Directory
 setopt auto_cd auto_pushd pushd_ignore_dups
 
-# --- Source 自定义配置 ---
+## Source custom config
 export ZSH_CUSTOM="$HOME/.config/zsh"
-for f in "$ZSH_CUSTOM"/*.zsh; do
-  [[ -f "$f" ]] && source "$f"
-done
-
-# --- 环境变量 ---
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export EDITOR='nvim'
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH=$PATH:"/c/Program Files/Git/cmd"
-
-# --- Zoxide ---
-# cargo install zoxide
-# you can type ci to use fzf
-eval "$(zoxide init zsh --cmd c)"
+source "$ZSH_CUSTOM/loader.zsh"
+source "$ZSH_CUSTOM/myshrc.zsh"
