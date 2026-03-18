@@ -143,6 +143,8 @@ window_rules:
       - window_title: { regex: "^ck - " }
       - window_title: { regex: "^ScreenToGif" }
       - window_title: { regex: "^QuickLook" }
+      - window_process: { equals: "WindowsTerminal" }
+        window_title: { regex: ".*Microsoft Visual Studio*" }
 
       # Ignores picture-in-picture windows for browsers.
       - window_title: { regex: "[Pp]icture.in.[Pp]icture" }
