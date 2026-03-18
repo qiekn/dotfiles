@@ -64,7 +64,7 @@ end
 ---@type vim.lsp.Config
 return {
   cmd = {
-    "clangd",
+    "C:/msys64/ucrt64/bin/clangd.exe",
     "--compile-commands-dir=build",
     "--function-arg-placeholders=0",
     "--offset-encoding=utf-16",
