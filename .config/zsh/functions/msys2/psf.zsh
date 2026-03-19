@@ -26,7 +26,7 @@ psf() {
   echo
 
   if [[ $REPLY == [yY] ]]; then
-    sudo pacman -S ${(f)pkgs}
+    pacman -S ${(f)pkgs}
   else
     echo "Cancelled"
   fi
