@@ -18,6 +18,6 @@ nnoremap gI :vsc Edit.GoToImplementation<CR>
 nnoremap K :vsc Edit.PeekDefinition<CR>
 
 nnoremap <c-o> :vsc View.NavigateBackward<CR>
-nnoremap <c-i> :vsc View.NavigateBackward<CR>
+nnoremap <c-i> :vsc View.NavigateForward<CR>
 
 nnoremap <Esc> :nohlsearch<CR>
