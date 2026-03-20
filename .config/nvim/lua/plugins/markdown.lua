@@ -13,6 +13,16 @@ return {
     "MeanderingProgrammer/render-markdown.nvim",
     opts = {
       default = false,
+      heading = {
+        icons = { "", "", "", "", "", "" },
+        position = "inline",
+        sign = false,
+        left_pad = 0,
+        left_margin = 0,
+      },
+      bullet = {
+        icons = { "•", "◦", "▸", "▹" },
+      },
       overrides = {
         buftype = {
           -- LSP hover floating windows
