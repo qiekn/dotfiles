@@ -14,7 +14,7 @@ autoload -U colors && colors
 
 ## Vi mode
 bindkey -v
-export KEYTIMEOUT=1
+export KEYTIMEOUT=15
 
 # beam for insert, block for normal
 zle-keymap-select() {
