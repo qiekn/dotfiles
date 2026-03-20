@@ -14,14 +14,21 @@ return {
     opts = {
       default = false,
       heading = {
-        icons = { "", "", "", "", "", "" },
         position = "inline",
-        sign = false,
-        left_pad = 0,
-        left_margin = 0,
+        sign = true,
       },
       bullet = {
         icons = { "•", "◦", "▸", "▹" },
+      },
+      code = {
+        sign = false,
+        width = "block",
+        min_width = 80,
+        border = "thin",
+        left_pad = 1,
+        right_pad = 1,
+        language_icon = true,
+        language_name = true,
       },
       overrides = {
         buftype = {
@@ -31,33 +38,12 @@ return {
               icons = { "", "", "", "", "", "" },
               position = "inline",
               sign = false,
-              width = "full",
-              left_pad = 0,
-              left_margin = 0,
-              border = false,
-              backgrounds = {
-                "RenderMarkdownHoverH1",
-                "RenderMarkdownHoverH2",
-                "RenderMarkdownHoverH3",
-                "RenderMarkdownHoverH4",
-                "RenderMarkdownHoverH5",
-                "RenderMarkdownHoverH6",
-              },
             },
             code = {
               inline = false,
             },
           },
         },
-      },
-      code = {
-        width = "block",
-        min_width = 80,
-        border = "thin",
-        left_pad = 1,
-        right_pad = 1,
-        language_icon = true,
-        language_name = true,
       },
       anti_conceal = {
         disable_mode = { "n" },
