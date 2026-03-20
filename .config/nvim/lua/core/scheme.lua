@@ -4,3 +4,4 @@ vim.cmd("hi CursorLine guibg=#383f58")
 -- vim.cmd("hi CursorLineNr guibg=red ctermbg=red ctermfg=white")
 
 vim.cmd("hi @EveryoneLoveDuck guifg=#ffa657")
+vim.cmd("hi FloatBorder guifg=#ff9303")
