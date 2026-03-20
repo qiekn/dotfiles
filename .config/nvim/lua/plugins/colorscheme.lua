@@ -47,7 +47,10 @@ return {
           "TelescopePreviewLine",
         },
       })
-      require("transparent").clear_prefix("Telescope")
+      -- Only clear Telescope UI chrome, keep preview highlights intact
+      for _, group in ipairs({ "TelescopeNormal", "TelescopeBorder", "TelescopePrompt", "TelescopeTitle" }) do
+        vim.cmd("hi " .. group .. " guibg=NONE ctermbg=NONE")
+      end
       vim.cmd("TransparentEnable")
     end,
   },
