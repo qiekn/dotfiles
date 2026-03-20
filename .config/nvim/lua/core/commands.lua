@@ -3,6 +3,7 @@ vim.cmd("command Symbols Neotree document_symbols")
 vim.cmd("command Rmd RenderMarkdown toggle")
 
 -- Code Runner
+--[[
 vim.api.nvim_create_user_command("Run", function()
   local ft = vim.bo.filetype
 
@@ -19,3 +20,4 @@ vim.api.nvim_create_user_command("Run", function()
     print("Not support this filetype yet.")
   end
 end, {})
+--]]
