@@ -86,3 +86,19 @@ set.shellcmdflag = "-c"
 set.shellquote = ""
 set.shellxquote = ""
 set.shellslash = true
+
+-- Tabline: show only filename
+set.tabline = "%!v:lua.MyTabline()"
+function MyTabline()
+  local s = ""
+  for i = 1, vim.fn.tabpagenr("$") do
+    local winnr = vim.fn.tabpagewinnr(i)
+    local bufnr = vim.fn.tabpagebuflist(i)[winnr]
+    local name = vim.fn.fnamemodify(vim.fn.bufname(bufnr), ":t")
+    if name == "" then name = "[No Name]" end
+    local modified = vim.fn.getbufvar(bufnr, "&modified") == 1 and " +" or ""
+    local sel = (i == vim.fn.tabpagenr()) and "%#TabLineSel#" or "%#TabLine#"
+    s = s .. sel .. " " .. name .. modified .. " "
+  end
+  return s .. "%#TabLineFill#"
+end
