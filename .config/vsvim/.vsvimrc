@@ -1,4 +1,5 @@
 " ln -s /home/user/.dotfiles/.config/vsvim/.vsvimrc /c/Users/user/.vsvimrc
+set nu
 set rnu
 
 set sw=4
