@@ -100,5 +100,13 @@ return {
     vim.api.nvim_buf_create_user_command(bufnr, "LspClangdShowSymbolInfo", function()
       symbol_info(bufnr, client)
     end, { desc = "Show symbol info" })
+
+    vim.api.nvim_buf_create_user_command(bufnr, "DiagToggle", function()
+      if vim.diagnostic.is_enabled({ bufnr = bufnr }) then
+        vim.diagnostic.enable(false, { bufnr = bufnr })
+      else
+        vim.diagnostic.enable(true, { bufnr = bufnr })
+      end
+    end, { desc = "Toggle diagnostics for current buffer" })
   end,
 }
