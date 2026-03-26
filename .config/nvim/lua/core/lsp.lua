@@ -1,5 +1,6 @@
 -- Languages I actually use
 vim.lsp.enable("clangd")
+vim.lsp.enable("rust_analyzer")
 -- vim.lsp.enable("csharp_ls")
 vim.lsp.enable("gopls")
 vim.lsp.enable("pyright")
@@ -69,7 +70,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     -- Hover with rounded border
     map("K", function()
-      vim.lsp.buf.hover({ border = "rounded", max_width = 80 })
+      vim.lsp.buf.hover({ border = "rounded", max_width = 100 })
     end, "Hover Documentation")
 
     -- Jump to the definition of the word under your cursor.

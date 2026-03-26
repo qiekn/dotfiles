@@ -8,6 +8,7 @@ return {
         single_file_cmd = "clang++ -std=c++23 -stdlib=libc++ -o /tmp/{name} {file} && /tmp/{name}",
         src_dir = "src", -- source directory name
       },
+      -- filetype_cmds = {},
       keymaps = {
         toggle_term = "<leader>j", -- set to false to disable
       },

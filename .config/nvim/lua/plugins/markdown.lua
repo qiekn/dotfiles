@@ -41,6 +41,8 @@ return {
             },
             code = {
               inline = false,
+              left_pad = 0,
+              right_pad = 0,
             },
           },
         },

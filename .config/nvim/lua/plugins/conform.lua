@@ -34,6 +34,7 @@ return {
           json = true,
           cpp = true,
           glsl = true,
+          rust = true,
         }
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
@@ -48,6 +49,7 @@ return {
         lua = { "stylua" },
         go = { "gofmt", "goimports" },
         cpp = { "clang-format" },
+        rust = { "rustfmt" },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
