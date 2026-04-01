@@ -7,6 +7,9 @@
     "module"
   ] @keyword)
 
+(global_module_fragment_declaration
+  "module" @keyword)
+
 (export_declaration
   "export" @keyword)
 
