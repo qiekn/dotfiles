@@ -1,6 +1,8 @@
 [safe]
   directory = /opt/homebrew/Library/Taps/homebrew/homebrew-core
   directory = /opt/homebrew/Library/Taps/homebrew/homebrew-cask
+  directory = C:/msys64/home/user/playground/tauri
+	directory = C:/msys64/home/user/GameDev/raylib/baba-is-you
 [user]
   name = qiekn
   email = qiekndev@gmail.com
@@ -9,6 +11,8 @@
 [core]
   editor = nvim
   excludesfile = ~/.gitignore_global
+  autocrlf = false
+  eol = lf
 [color]
   ui = true
 [https]
