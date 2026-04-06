@@ -1,6 +1,8 @@
 -- Languages I actually use
 vim.lsp.enable("clangd")
 vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("asm_ls")
+
 -- vim.lsp.enable("csharp_ls")
 vim.lsp.enable("gopls")
 vim.lsp.enable("pyright")
