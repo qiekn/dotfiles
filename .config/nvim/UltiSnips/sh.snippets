@@ -13,3 +13,15 @@ fi
 
 # vim: ft=sh ts=2 sw=2 et
 endsnippet
+
+snippet ags "$@" wA
+"$@"
+endsnippet
+
+snippet "ag(\d+)" "$_i" Ar
+`!p snip.rv = "\"$" + match.group(1) + "\""`
+endsnippet
+
+snippet btw "Description" bA
+I'm using arch btw.
+endsnippet
