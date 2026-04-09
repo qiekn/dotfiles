@@ -2,17 +2,23 @@
   directory = /opt/homebrew/Library/Taps/homebrew/homebrew-core
   directory = /opt/homebrew/Library/Taps/homebrew/homebrew-cask
   directory = C:/msys64/home/user/playground/tauri
-	directory = C:/msys64/home/user/GameDev/raylib/baba-is-you
+  directory = C:/msys64/home/user/GameDev/raylib/baba-is-you
 [user]
   name = qiekn
   email = qiekndev@gmail.com
 [init]
   defaultBranch = main
 [core]
+  pager = delta
   editor = nvim
   excludesfile = ~/.gitignore_global
   autocrlf = false
   eol = lf
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  dark = true      # or `light = true`, or omit for auto-detection
 [color]
   ui = true
 [https]
@@ -25,6 +31,7 @@
   cp = cherry-pick
   lg = log --oneline --abbrev --author=qiekn
   browse = "!f() { \n  url=$(git remote get-url origin);\n  url=${url/git@github.com:/https://github.com/};\n  url=${url%.git};\n  start \"$url\"; \n}; f"
+  diff-side-by-side = -c delta.features=side-by-side diff
 [diff]
   tool = nvimdiff
 [filter "lfs"]
