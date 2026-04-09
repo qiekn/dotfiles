@@ -133,4 +133,13 @@ snippet "table([1-9][1-9])" "Fancy table" br
 `!p snip.rv = match.group(1)`
 endsnippet
 
+# -----------------------------------------------------------------------------: mdx
+snippet gif "<VideoGif>" b
+<VideoGif src="/videos/$0"></VideoGif>
+endsnippet
+
+snippet credit "<Credit>" b
+<Credit platform="bilibili" author="$0" url="x" title="x" />
+endsnippet
+
 # vim:ft=snippets:
