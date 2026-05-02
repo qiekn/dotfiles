@@ -3,4 +3,5 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR='nvim'
+export CMAKE_GENERATOR=Ninja
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
