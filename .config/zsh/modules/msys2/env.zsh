@@ -27,7 +27,15 @@ path+=(
   "$WINHOME/.local/bin"
   "$USERPROFILE/scoop/shims"
   "$USERPROFILE/scoop/apps/rustup/current/.cargo/bin"
+  "/e/dev/love2d/"
 )
+
+# october disk
+export EAPPS="/e/apps"
+path+=(
+  "$EAPPS/cpa"
+)
+
 
 # ln -s
 export MSYS=winsymlinks:nativestrict

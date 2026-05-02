@@ -5,6 +5,7 @@ alias make="mingw32-make"
 alias pdf="start sumatrapdf"
 alias findpdf="fd -e pdf | fzf | xargs -r sumatrapdf"
 alias fpdf='findpdf'
+alias love='/e/dev/love2d/love.exe'
 
 alias winhome="cd $WINHOME"
 alias desktop="cd $WINHOME/Desktop"
