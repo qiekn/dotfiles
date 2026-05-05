@@ -1,2 +1,23 @@
 README.md
 CLAUDE.md
+
+{{- if eq .chezmoi.os "windows" }}
+.zshrc
+.zshrc_optimize
+.config/zsh
+.tmux.conf
+.config/tmux
+.oh-my-zsh
+{{- else }}
+.ideavimrc
+.scripts/open_with_neovim.reg
+.config/glazewm
+.config/vsvim
+{{- end }}
+
+{{- if ne .chezmoi.os "darwin" }}
+.skhdrc
+.yabairc
+.config/karabiner
+.config/raycast
+{{- end }}
