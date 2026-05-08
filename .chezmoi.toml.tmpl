@@ -1,0 +1,10 @@
+{{- /* Rendered to ~/.config/chezmoi/chezmoi.toml on `chezmoi init`.
+       Prompts run only once; subsequent inits reuse the saved values. */ -}}
+{{- $email := promptStringOnce . "email" "git email" "qiekndev@gmail.com" -}}
+{{- $name  := promptStringOnce . "name"  "git name"  "qiekn" -}}
+
+sourceDir = "~/.dotfiles"
+
+[data]
+    email = {{ $email | quote }}
+    name  = {{ $name  | quote }}
