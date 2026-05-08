@@ -2,22 +2,22 @@ README.md
 CLAUDE.md
 
 {{- if eq .chezmoi.os "windows" }}
-dot_zshrc
-dot_zshrc_optimize
-dot_config/zsh
-dot_tmux.conf
-dot_config/tmux
-.chezmoiexternal.toml
+.zshrc
+.zshrc_optimize
+.config/zsh
+.tmux.conf
+.config/tmux
+.oh-my-zsh
 {{- else }}
-dot_ideavimrc
-dot_scripts/open_with_neovim.reg
-dot_config/glazewm
-dot_config/vsvim
+.ideavimrc
+.scripts/open_with_neovim.reg
+.config/glazewm
+.config/vsvim
 {{- end }}
 
 {{- if ne .chezmoi.os "darwin" }}
-dot_skhdrc
-dot_yabairc
-dot_config/karabiner
-dot_config/raycast
+.skhdrc
+.yabairc
+.config/karabiner
+.config/raycast
 {{- end }}
