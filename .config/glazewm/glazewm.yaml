@@ -136,6 +136,9 @@ window_rules:
     match:
       - window_class: { equals: "Tauri Window" }
       - window_class: { equals: "YodaoMainWndClass" }
+      # Godot
+      - window_class: { equals: 'Engine' }
+        window_title: { not_regex: '.*- Godot Engine$' }
 
 
   - commands: ["ignore"]
