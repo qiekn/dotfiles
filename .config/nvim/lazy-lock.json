@@ -7,7 +7,7 @@
   "cmp-nvim-ultisnips": { "branch": "main", "commit": "7773477d99e9cefbbf956b820fb784b87643d89e" },
   "cmp-path": { "branch": "main", "commit": "c642487086dbd9a93160e1679a1327be111cbc25" },
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
-  "code-runner.nvim": { "branch": "main", "commit": "b464552a98a0de24bfb8bb9a7dc69e70847e9f5e" },
+  "code-runner.nvim": { "branch": "main", "commit": "8af291f7738c9b96ba697944083572e7b1ef8a32" },
   "conceal.nvim": { "branch": "master", "commit": "1aff9fc5d1157aef1c7c88b6df6d6db21268d00a" },
   "conform.nvim": { "branch": "master", "commit": "086a40dc7ed8242c03be9f47fbcee68699cc2395" },
   "flash.nvim": { "branch": "main", "commit": "fcea7ff883235d9024dc41e638f164a450c14ca2" },
