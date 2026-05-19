@@ -23,3 +23,7 @@ If some program not found, check my zsh config
 
 - C:\msys64\home\user\.dotfiles\.config\zsh\core\env.zsh
 - C:\msys64\home\user\.dotfiles\.config\zsh\modules\msys2\env.zsh
+
+## Claudex context
+
+上下文限制在 300k, 提醒我优化上下文占用
