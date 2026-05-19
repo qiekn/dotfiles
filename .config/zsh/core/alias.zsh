@@ -3,6 +3,7 @@
 alias ll="ls -all"
 alias la="ls -A"
 alias cl="clear"
+alias claude-danger="claude --dangerously-skip-permissions"
 
 alias vim='nvim'
 alias nvimdiff='nvim -d'
