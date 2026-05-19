@@ -27,7 +27,8 @@ return {
     "xiyaowong/transparent.nvim",
     config = function()
       -- Load the colorscheme here.
-      vim.cmd.colorscheme("github_dark")
+      -- vim.cmd.colorscheme("github_dark")
+      vim.cmd.colorscheme("tokyonight-night")
       require("transparent").setup({
         groups = {
           "Normal",
@@ -51,7 +52,8 @@ return {
       for _, group in ipairs({ "TelescopeNormal", "TelescopeBorder", "TelescopePrompt", "TelescopeTitle" }) do
         vim.cmd("hi " .. group .. " guibg=NONE ctermbg=NONE")
       end
-      vim.cmd("TransparentEnable")
+      -- vim.cmd("TransparentEnable")
+      vim.cmd("TransparentDisable")
     end,
   },
 }
