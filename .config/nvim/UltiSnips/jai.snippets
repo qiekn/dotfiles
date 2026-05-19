@@ -1,0 +1,170 @@
+## global
+
+global !p
+from jai import jai_debug_call
+from jai import jai_type_of
+from jai import jai_defer
+from jai import jai_inline
+from jai import jai_postfix_cast
+endglobal
+
+## import
+
+snippet "(\w+) ip" "basic" rA
+#import "`!p snip.rv = match.group(1).capitalize()`"
+endsnippet
+
+snippet basic "basic" bA
+#import "Basic"
+$0
+endsnippet
+
+snippet ip "import" bA
+#import "$1";
+$0
+endsnippet
+
+snippet import "import" b
+#import "$1";
+$0
+endsnippet
+
+## function
+
+snippet func "function" b
+${1:func_name } :: () {
+	$0
+}
+endsnippet
+
+snippet "(\w+)\*\*" "function" rA
+`!p snip.rv = match.group(1)` :: () {
+	$0
+}
+endsnippet
+
+snippet "(\w+)fn" "function" rA
+`!p snip.rv = match.group(1)` :: () {
+	$0
+}
+endsnippet
+
+## ;commands
+
+snippet ";(to|return)" "=>" rwA
+=>
+endsnippet
+
+snippet ;add "" wA
++
+endsnippet
+
+snippet ;sub "" wA
+-
+endsnippet
+
+snippet ";(ld|load)" "=>" rwA
+#load "$0"
+endsnippet
+
+snippet ";var|mk" "jai variable declaration" brA
+${1:name} := ${2:value};$0
+endsnippet
+
+snippet "md" "jai variable declaration" brA
+${1:name}: ${2:type} = ${3:value};$0
+endsnippet
+
+## `#` snippets
+
+snippet #bake_arguments "" w
+#bake_arguments
+endsnippet
+
+## hepler functions
+snippet hs "hello sailer" bA
+print("Hello, Sailer!");
+endsnippet
+
+snippet log "print()" bA
+print("$0");
+endsnippet
+
+#snippet "(\w+);print" "print variable" rA
+#print("`!p snip.rv = match.group(1)`=%\n", `!p snip.rv = match.group(1)`);
+#endsnippet
+
+snippet "^(\s*)([\w\.\[\]\s,]+);print" "print variables" brA
+`!p snip.rv = match.group(1) + jai_debug_call("print", match.group(2))`
+endsnippet
+
+snippet "^(\s*)([\w\.\[\]\s,]+);log" "log variables" brA
+`!p snip.rv = match.group(1) + jai_debug_call("log", match.group(2))`
+endsnippet
+
+snippet "^(\s*)([\w\.\[\]]+);type" "print type_of" brA
+`!p snip.rv = match.group(1) + jai_type_of(match.group(2))`
+endsnippet
+
+snippet "^(\s*)(.+);defer" "defer current statement" brA
+`!p snip.rv = match.group(1) + jai_defer(match.group(2))`
+endsnippet
+
+snippet "^(\s*)(.+);inline" "inline current statement" brA
+`!p snip.rv = match.group(1) + jai_inline(match.group(2))`
+endsnippet
+
+# ;fn     -> no args, no return
+# a;fn    -> args, no return
+# r;fn    -> no args, return
+# ar;fn   -> args, return
+
+snippet ;fn "function" bA
+${1:name} :: () {
+	$0
+}
+endsnippet
+
+snippet a;fn "function arguments" bA
+${1:name} :: (${2:args}) {
+	$0
+}
+endsnippet
+
+snippet r;fn "function return" bA
+${1:name} :: () -> ${2:int} {
+	$0
+}
+endsnippet
+
+snippet ar;fn "function arguments return" bA
+${1:name} :: (${2:args}) -> ${3:int} {
+	$0
+}
+endsnippet
+
+snippet ;struct "struct" bA
+${1:name} :: struct {
+	$0
+}
+endsnippet
+
+# from: b = a;cast
+#   to: b = cast($0) a;
+snippet "^(\s*)(.*);cast" "postfix cast" rA
+`!p
+lhs, prefix, expr = jai_postfix_cast(match.group(2), "cast")
+snip.rv = match.group(1) + lhs + prefix
+`${1:u16}) `!p
+lhs, prefix, expr = jai_postfix_cast(match.group(2), "cast")
+snip.rv = expr
+`;$0
+endsnippet
+
+snippet ;main "jai main" bA
+#import "Basic";
+
+main :: () {
+   $0
+}
+endsnippet

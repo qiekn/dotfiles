@@ -1,5 +1,6 @@
 -- Languages I actually use
 vim.lsp.enable("clangd")
+vim.lsp.enable("jails")
 vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("asm_ls")
 
