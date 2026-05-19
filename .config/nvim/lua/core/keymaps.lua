@@ -38,6 +38,24 @@ vim.keymap.set("n", "<leader>mk", "`", { desc = "Goto Marks" })
 -- clangd
 vim.keymap.set("n", "<leader>tp", ":LspClangdSwitchSourceHeader<CR>", { desc = "C++: Switch Source <-> Header" })
 
+-- ----------------------------------------------------------------------------: Insert Mode
+-- foo(|)  when cursor is inside (), press ; --> foo();
+vim.keymap.set("i", ";", function()
+  -- 1. one line version
+  -- return vim.fn.getline("."):sub(vim.fn.col("."), vim.fn.col(".")) == ")" and "<Right>;" or ";"
+
+  -- 2. full explained version
+  local line = vim.fn.getline(".") -- Get the current line text.
+  local cusor_column = vim.fn.col(".") -- Get cusor column position
+  local next_char = line:sub(cusor_column, cusor_column)
+
+  if next_char == ")" then
+    return "<Right>;"
+  end
+
+  return ";"
+end, { expr = true, replace_keycodes = true })
+
 -- ----------------------------------------------------------------------------: Command Mode
 -- Vim command line mode navigation with up and down
 vim.keymap.set("c", "<Down>", function()
