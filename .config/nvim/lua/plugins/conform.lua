@@ -35,6 +35,8 @@ return {
           cpp = true,
           glsl = true,
           rust = true,
+          css = true,
+          javascript = true,
         }
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
