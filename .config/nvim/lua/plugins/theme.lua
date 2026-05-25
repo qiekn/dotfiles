@@ -8,7 +8,14 @@ return {
   { "rose-pine/neovim" },
   { "projekt0n/github-nvim-theme" },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  { "folke/tokyonight.nvim" },
+  {
+    "folke/tokyonight.nvim",
+    opts = {
+      styles = {
+        comments = { italic = false },
+      },
+    },
+  },
 
   --------------
   --  Config  --
