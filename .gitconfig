@@ -3,6 +3,8 @@
   directory = /opt/homebrew/Library/Taps/homebrew/homebrew-cask
   directory = C:/msys64/home/user/playground/tauri
   directory = C:/msys64/home/user/GameDev/raylib/baba-is-you
+  directory = C:/msys64/home/user/gamedev/remake/baba
+  directory = C:/msys64/home/user/gamedev/remake/card
 [user]
   name = qiekn
   email = qiekndev@gmail.com
@@ -39,3 +41,5 @@
   process = git-lfs filter-process
   required = true
   clean = git-lfs clean -- %f
+[credential "helperselector"]
+	selected = manager
