@@ -28,6 +28,7 @@ path+=(
   "$USERPROFILE/scoop/shims"
   "$USERPROFILE/scoop/apps/rustup/current/.cargo/bin"
   "/e/dev/love2d/"
+  "/opt/jai/bin/"
 )
 
 # october disk
