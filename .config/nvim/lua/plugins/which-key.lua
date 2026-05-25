@@ -66,6 +66,8 @@ return {
         { "<leader>w", group = "[W]orkspace" },
         { "<leader>t", group = "[T]oggle" },
         { "<leader>gh", group = "[G]it [H]unk", mode = { "n", "v" } },
+        -- Hide which-key popup for ' (keep `, g', g` available)
+        { "'", hidden = true, mode = { "n", "v" } },
       },
     },
   },
