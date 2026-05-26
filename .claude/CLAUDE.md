@@ -1,3 +1,11 @@
+## LLMs Disclosure (AI 披露)
+
+And if LLMs was used in any way for a commit, use Co-Authored-By option.
+
+If no Co-Authored-By option was disabled, add an LLM-assisted: <tool name> trailer to the commit message.
+
+If the user commits manually, remind them to add it.
+
 ## Compact Instructions
 
 When compressing, preserve in priority order:
