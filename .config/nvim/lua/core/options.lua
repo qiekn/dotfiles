@@ -14,13 +14,13 @@ set.foldenable = false
 
 -- indent
 set.tabstop = 2
-set.shiftwidth = 2
+set.shiftwidth = 0
 set.expandtab = true
 set.breakindent = true -- Enable break indent
 
-set.list = true
+set.list = false
 set.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-vim.cmd("autocmd FileType go setlocal nolist")
+vim.cmd("autocmd FileType go,jai setlocal nolist")
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
@@ -61,7 +61,7 @@ vim.api.nvim_create_autocmd("FileType", {
 set.inccommand = "split"
 
 -- Minimal number of screen lines to keep above and below the cursor.
-set.scrolloff = 10
+set.scrolloff = 0
 
 -- comment :h gc
 vim.api.nvim_create_autocmd("FileType", {
@@ -95,7 +95,9 @@ function MyTabline()
     local winnr = vim.fn.tabpagewinnr(i)
     local bufnr = vim.fn.tabpagebuflist(i)[winnr]
     local name = vim.fn.fnamemodify(vim.fn.bufname(bufnr), ":t")
-    if name == "" then name = "[No Name]" end
+    if name == "" then
+      name = "[No Name]"
+    end
     local modified = vim.fn.getbufvar(bufnr, "&modified") == 1 and " +" or ""
     local sel = (i == vim.fn.tabpagenr()) and "%#TabLineSel#" or "%#TabLine#"
     s = s .. sel .. " " .. name .. modified .. " "
