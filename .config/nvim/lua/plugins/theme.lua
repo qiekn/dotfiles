@@ -1,25 +1,29 @@
 -- [[Color Schemes]]
 -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
 return {
-  --------------
-  --  Themes  --
-  --------------
+  -- ----------------------------------------------------------------------------: Themes
 
   { "rose-pine/neovim" },
   { "projekt0n/github-nvim-theme" },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
     "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
     opts = {
       styles = {
         comments = { italic = false },
+        keywords = { italic = false },
       },
     },
   },
 
-  --------------
-  --  Config  --
-  --------------
+  -- { -- Jonathon Blow
+  --   "RostislavArts/naysayer.nvim",
+  --   lazy = false,
+  -- },
+
+  -- ----------------------------------------------------------------------------: Config
 
   { -- Preview theme with telescope
     "andrew-george/telescope-themes",
@@ -36,18 +40,32 @@ return {
       -- Load the colorscheme here.
       -- vim.cmd.colorscheme("github_dark")
       vim.cmd.colorscheme("tokyonight-night")
+
       require("transparent").setup({
         groups = {
-          "Normal",
+          -- "Normal", -- Keep colorscheme normal background
           "NormalNC",
           "NormalFloat",
           "SignColumn",
           "Folded",
         },
         extra_groups = {
-          "NeoTreeNormal",
+          -- "NeoTreeNormal",
+
           "TelescopeNormal",
           "TelescopeBorder",
+
+          "TelescopePromptNormal",
+          "TelescopePromptBorder",
+          "TelescopePromptTitle",
+
+          "TelescopeResultsNormal",
+          "TelescopeResultsBorder",
+          -- "TelescopeResultsTitle",
+
+          "TelescopePreviewNormal",
+          "TelescopePreviewBorder",
+          -- "TelescopePreviewTitle",
         },
         exclude_groups = {
           "TelescopeSelection",
@@ -55,12 +73,8 @@ return {
           "TelescopePreviewLine",
         },
       })
-      -- Only clear Telescope UI chrome, keep preview highlights intact
-      for _, group in ipairs({ "TelescopeNormal", "TelescopeBorder", "TelescopePrompt", "TelescopeTitle" }) do
-        vim.cmd("hi " .. group .. " guibg=NONE ctermbg=NONE")
-      end
-      -- vim.cmd("TransparentEnable")
-      vim.cmd("TransparentDisable")
+
+      vim.cmd("TransparentEnable")
     end,
   },
 }
