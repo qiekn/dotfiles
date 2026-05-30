@@ -22,6 +22,7 @@ return {
       filetype_cmds = {
         -- jai = "jai -quiet {file} && ./{name}.exe",
         jai = "jai -quiet {file} >/tmp/jai.log 2>&1 && ./{name}.exe || cat /tmp/jai.log",
+        c = "gcc {file} -o {name} && ./{name}.exe",
       },
 
       keymaps = {
