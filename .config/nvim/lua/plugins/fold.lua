@@ -10,7 +10,7 @@ return {
           require("statuscol").setup({
             relculright = true,
             segments = {
-              { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
+              -- { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
               { text = { "%s" }, click = "v:lua.ScSa" },
               { text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
             },
@@ -21,6 +21,29 @@ return {
     event = "BufReadPost",
     opts = {
       provider_selector = function(bufnr, filetype, buftype)
+        -- There is no treesitter for jai, include } to make fold single line
+        if filetype == "jai" then
+          return function(bufnr)
+            local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
+            local folds = {}
+            local stack = {}
+            for lnum, raw in ipairs(lines) do
+              local line = raw:gsub("//.*$", ""):gsub('"[^"\\]*"', "")
+              for i = 1, #line do
+                local c = line:sub(i, i)
+                if c == "{" then
+                  table.insert(stack, lnum - 1)
+                elseif c == "}" then
+                  local s = table.remove(stack)
+                  if s and (lnum - 1) > s then
+                    table.insert(folds, { startLine = s, endLine = lnum - 1 })
+                  end
+                end
+              end
+            end
+            return folds
+          end
+        end
         return { "treesitter", "indent" }
       end,
       fold_virt_text_handler = function(virtText, lnum, endLnum, width, truncate)
