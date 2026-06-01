@@ -147,6 +147,7 @@ window_rules:
       - window_process: { equals: "zebar" }
 
       - window_process: { equals: "ChatGPT" }
+      - window_class: { equals: "PotPlayer64" }
 
       - window_class: { equals: "GLFW30" } # Ignore all GLFW windows (for imgui docking)
       # - window_class: { equals: "Chrome_WidgetWin_1" }
