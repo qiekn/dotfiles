@@ -31,3 +31,19 @@ vim.api.nvim_create_autocmd("VimLeavePre", {
     io.write(string.format("\27]11;%s\7", original_bg))
   end,
 })
+
+-- Search jai standard modules
+vim.api.nvim_create_user_command("Jai", function(opts)
+  local jai_modules = "/opt/jai/modules"
+  local pattern = opts.args
+
+  if pattern == "" then
+    print("Usage: :Jai <pattern>")
+    return
+  end
+
+  vim.cmd("silent grep! " .. vim.fn.shellescape(pattern) .. " " .. jai_modules)
+  vim.cmd("copen")
+end, {
+  nargs = "+",
+})
