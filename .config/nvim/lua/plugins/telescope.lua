@@ -98,6 +98,7 @@ return {
       vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
       vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch [B]uffer" })
+      vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[S]earch [B]uffer" })
       vim.keymap.set("n", "<leader>so", builtin.vim_options, { desc = "[S]et vim [O]ptions" })
       vim.keymap.set("n", "<leader>sc", builtin.commands, { desc = "[S]earch vim [C]ommands" })
       vim.keymap.set("n", "<leader>cc", builtin.commands, { desc = "[S]earch vim [C]ommands" })
@@ -138,6 +139,10 @@ return {
       vim.keymap.set("n", "<leader>sm", function()
         builtin.git_files({ cwd = vim.fn.expand("~/.dotfiles/") })
       end, { desc = "[S]earch [M]y Dotfiles" })
+
+      vim.keymap.set("n", "<leader>sj", function()
+        builtin.git_files({ cwd = vim.fn.expand("C:/msys64/opt/jai/modules") })
+      end, { desc = "[S]earch [J]ai" })
     end,
   },
 }
