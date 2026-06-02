@@ -18,10 +18,12 @@ return {
     },
   },
 
-  -- { -- Jonathon Blow
-  --   "RostislavArts/naysayer.nvim",
-  --   lazy = false,
-  -- },
+  { -- Jonathon Blow
+    "qiekn/naysayer.nvim",
+    dir = vim.fn.stdpath("config") .. "/lua/local_plugins/naysayer.nvim",
+    lazy = false,
+    priority = 1000,
+  },
 
   -- ----------------------------------------------------------------------------: Config
 
@@ -37,14 +39,10 @@ return {
   { -- Transparent background
     "xiyaowong/transparent.nvim",
     config = function()
-      -- Load the colorscheme here.
-      -- vim.cmd.colorscheme("github_dark")
-      vim.cmd.colorscheme("tokyonight-night")
-
       require("transparent").setup({
         groups = {
           -- "Normal", -- Keep colorscheme normal background
-          "NormalNC",
+          -- "NormalNC",
           "NormalFloat",
           "SignColumn",
           "Folded",
@@ -75,6 +73,11 @@ return {
       })
 
       vim.cmd("TransparentEnable")
+      -- vim.cmd("TransparentDisable")
+
+      -- Load the colorscheme here.
+      -- vim.cmd.colorscheme("github_dark")
+      vim.cmd.colorscheme("naysayer")
     end,
   },
 }
