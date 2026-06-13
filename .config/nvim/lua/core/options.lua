@@ -79,7 +79,8 @@ set.conceallevel = 2
 set.fileencodings = { "utf-8", "gb2312", "gbk", "gb18030" }
 set.fileencoding = "utf-8"
 set.encoding = "utf-8"
-set.fileformat = "unix"
+vim.opt.fileformats = { "unix", "dos" }
+vim.opt.fileformat = "unix"
 
 -- Msys2 shell
 set.shellcmdflag = "-c"
