@@ -86,7 +86,7 @@ snippet hs "hello sailer" bA
 print("Hello, Sailer!");
 endsnippet
 
-snippet print "print()" bA
+snippet print( "print()" bA
 print("$0");
 endsnippet
 
@@ -171,4 +171,17 @@ snippet ;main "jai main" bA
 main :: () {
    $0
 }
+endsnippet
+
+## scope identifiers
+snippet smodule "" bA
+#scope_module
+endsnippet
+
+snippet fmodule "" bA
+#file_module
+endsnippet
+
+snippet #load "#load" bA
+#load "$0";
 endsnippet
