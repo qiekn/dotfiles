@@ -6,11 +6,12 @@ return {
   },
   keys = {
     { "<F5>", "<cmd>w<CR><cmd>Run<CR>", desc = "Run current file", silent = true },
+    { "<F8>", "<cmd>w<CR><cmd>!./run.sh<CR>", desc = "Run shell script", silent = true },
   },
   config = function()
     require("code-runner").setup({
       use_terminal = true, -- true: split terminal, false: :! mode
-      term_height = 15,
+      term_height = 10,
 
       run_scripts = {},
 
