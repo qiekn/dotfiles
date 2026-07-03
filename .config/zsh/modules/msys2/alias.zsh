@@ -9,7 +9,6 @@ alias love='/e/dev/love2d/love.exe'
 
 alias winhome="cd $WINHOME"
 alias desktop="cd $WINHOME/Desktop"
-alias emacs="/c/msys64/mingw64/bin/runemacs.exe"
 alias code="$WINHOME/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
 
 alias gdb='gdb -q'
