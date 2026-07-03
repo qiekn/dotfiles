@@ -140,6 +140,8 @@ window_rules:
       - window_class: { equals: 'Engine' }
         window_title: { not_regex: '.*- Godot Engine$' }
 
+      - window_class: { equals: "IrfanView"}
+
 
   - commands: ["ignore"]
     match:

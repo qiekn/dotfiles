@@ -19,3 +19,4 @@ alias msys2conf='nvim ~/.dotfiles/.config/zsh/modules/msys2/'
 alias msys2reload='source ~/.dotfiles/.config/zsh/loader.zsh'
 alias ls=eza
 alias jaistl='cd /e/apps/jai/modules/'
+alias view='irfanview'
