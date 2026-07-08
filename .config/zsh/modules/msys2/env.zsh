@@ -1,6 +1,7 @@
 # modules/msys2/env.zsh — MSYS2 UCRT64 environment
 
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_DIR="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"

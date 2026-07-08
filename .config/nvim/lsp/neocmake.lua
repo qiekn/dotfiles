@@ -16,13 +16,9 @@
 --- })
 --- ```
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = false
-
 ---@type vim.lsp.Config
 return {
-  cmd = { "neocmakelsp", "--stdio" },
+  cmd = { "neocmakelsp", "stdio" },
   filetypes = { "cmake" },
-  root_markers = { ".git", "build", "cmake" },
-  capabilities = capabilities,
+  root_markers = { ".neocmake.toml", ".git", "build", "cmake" },
 }
