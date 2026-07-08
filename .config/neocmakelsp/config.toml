@@ -1,3 +1,11 @@
+## for MSYS2
+
+# check: .dotfiles/.config/zsh/modules/msys2/env.zsh
+
+# cd $APPDATA
+# mkdir neocmake
+# ln -s "$XDG_CONFIG_DIR/neocmakelsp/config.toml" "$APPDATA/neocmakelsp/config.toml"
+
 command_case = "lower_case" # or "upper_case"
 enable_external_cmake_lint = true # true to use external cmake-lint
 line_max_words =  120
