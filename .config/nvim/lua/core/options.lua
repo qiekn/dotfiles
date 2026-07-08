@@ -13,12 +13,12 @@ set.foldexpr = "nvim_treesitter#foldexpr()"
 set.foldenable = false
 
 -- indent
-set.tabstop = 2
+set.tabstop = 4
 set.shiftwidth = 0
 set.expandtab = true
 set.breakindent = true -- Enable break indent
 
-set.list = false
+set.list = true
 set.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.cmd("autocmd FileType go,jai setlocal nolist")
 
@@ -61,7 +61,7 @@ vim.api.nvim_create_autocmd("FileType", {
 set.inccommand = "split"
 
 -- Minimal number of screen lines to keep above and below the cursor.
-set.scrolloff = 0
+set.scrolloff = 10
 
 -- comment :h gc
 vim.api.nvim_create_autocmd("FileType", {
