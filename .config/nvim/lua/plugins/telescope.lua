@@ -74,6 +74,7 @@ return {
             "[/\\]entt.h", -- ignore entt.h, because it's 3MB!! (only used for raylib ecs projects)
             -- "deps/.*%.h",
             "deps[/\\]",
+            "modules[/\\]",
             "vendor[/\\]",
             "3rdparty[/\\]",
             "lib[/\\]",
@@ -143,6 +144,10 @@ return {
       vim.keymap.set("n", "<leader>sj", function()
         builtin.git_files({ cwd = vim.fn.expand("C:/msys64/opt/jai/modules") })
       end, { desc = "[S]earch [J]ai" })
+
+      vim.keymap.set("n", "<leader>si", function()
+        builtin.live_grep({ cwd = vim.fn.expand("C:/msys64/opt/jai/modules") })
+      end, { desc = "Grep Jai Modules" })
     end,
   },
 }
