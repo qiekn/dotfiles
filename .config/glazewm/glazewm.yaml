@@ -265,6 +265,9 @@ keybindings:
   - commands: ["toggle-minimized"]
     bindings: ["alt+m"]
 
+
+  # NOTE: we disable this, because sometime I play video games wsad is move key,
+  # if I press alt + w, something bad happened
   # Close focused window.
   - commands: ['close']
     bindings: ['alt+w']
