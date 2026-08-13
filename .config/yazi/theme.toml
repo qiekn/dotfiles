@@ -1,2 +1,8 @@
 ﻿# "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
 # Use Yazi's built-in theme for the installed version.
+
+[filetype]
+
+rules = [
+  { url = "*/", fg = "#89ddff", bold = true },
+]
