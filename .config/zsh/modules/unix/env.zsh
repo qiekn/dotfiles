@@ -1,3 +1,3 @@
 path+=(
-  "/opt/jai/"
+  "/opt/jai/bin/"
 )
