@@ -34,6 +34,8 @@ return {
           json = true,
           cpp = true,
           glsl = true,
+          hlsl = true,
+          shaderslang = true,
           rust = true,
           css = true,
           javascript = true,

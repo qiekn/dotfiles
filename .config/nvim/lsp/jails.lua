@@ -2,7 +2,9 @@
 ---@type vim.lsp.Config
 return {
   cmd = {
-    "E:/apps/jai/bin/jails.exe",
+    "C:/msys64/opt/jai/jails.exe",
+    "-jai_path",
+    "C:/msys64/opt/jai/",
   },
 
   filetypes = { "jai" },
