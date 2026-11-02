@@ -19,3 +19,7 @@ alias msys2reload='source ~/.dotfiles/.config/zsh/loader.zsh'
 alias ls=eza
 alias jaistl='cd /e/apps/jai/modules/'
 alias view='irfanview'
+
+fp() {
+    "C:/Users/user/AppData/Local/Voidstar/FilePilot/FPilot.exe" "$@" >/dev/null 2>&1 &!
+}
