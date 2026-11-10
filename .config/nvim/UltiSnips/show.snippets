@@ -1,0 +1,15 @@
+priority 100
+
+snippet sep "marker" b
+`!p
+prefix = ': '
+suffix = ":"
+
+count = 80 - len(prefix) - len(suffix)
+snip.rv = prefix + ("-" * count) + suffix
+` $0
+endsnippet
+
+snippet tc "text_color" b
+: text_color $0
+endsnippet

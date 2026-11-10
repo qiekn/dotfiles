@@ -10,15 +10,6 @@ endglobal
 
 ## import
 
-snippet "(\w+) ip" "basic" rA
-#import "`!p snip.rv = match.group(1).capitalize()`"
-endsnippet
-
-snippet basic "basic" bA
-#import "Basic"
-$0
-endsnippet
-
 snippet ip "import" bA
 #import "$1";
 $0
@@ -169,7 +160,7 @@ snippet ;main "jai main" bA
 #import "Basic";
 
 main :: () {
-   $0
+	$0
 }
 endsnippet
 
@@ -185,3 +176,143 @@ endsnippet
 snippet #load "#load" bA
 #load "$0";
 endsnippet
+
+# -----------------------------------------------------------------------------: first.jai
+
+snippet ;first "first.jai" bA
+OUTPUT_EXECUTABLE_NAME :: "${1:${VISUAL:app}}";
+OUTPUT_DIRECTORY :: "bin";
+$0
+#run {
+	w := compiler_create_workspace("Jail");
+	if !w {
+		write_string("The world is not ready for jai!\n");
+		return;
+	}
+
+	options := get_build_options(w);
+
+	options.output_executable_name = OUTPUT_EXECUTABLE_NAME;
+	options.output_path = OUTPUT_DIRECTORY;
+	if !make_directory_if_it_does_not_exist(OUTPUT_DIRECTORY) {
+		log(tprint("Could not create output directory %.", OUTPUT_DIRECTORY));
+		return;
+	}
+
+	set_build_options(options, w);
+
+	add_build_file("src/main.jai", w);
+
+	set_build_options_dc(.{do_output=false});
+}
+
+#import "Compiler";
+#import "Basic";
+#import "File";
+endsnippet
+
+# -----------------------------------------------------------------------------: first.jai alt
+snippet ;jail "first.jai" b
+#!/bin/env jai
+
+#import "Compiler";
+#import "Basic";
+#import "Process";
+
+our_debug_version_compilation_finished := false;
+are_we_building_release_version        := false;
+
+#run build();
+
+build :: () {
+	set_build_options_dc(.{do_output=false});
+
+	// Release build
+	for get_toplevel_command_line() {
+		if it == {
+			case "-o"; #through;
+			case "-optimized";
+				are_we_building_release_version = true;
+				build_release();
+		}
+	}
+
+	// Debug build
+	if !are_we_building_release_version then build_debug();
+}
+
+start_a_workspace :: (name: string, procedure: (w: Workspace)) {
+	w := compiler_create_workspace(name);
+	if !w {
+		log_error("Failed to create workspace '%'", name);
+		return;
+	}
+
+	procedure(w);
+}
+
+setup_debug :: (w: Workspace) {
+	options := get_build_options(w);
+
+	set_optimization(*options, .DEBUG);
+
+	options.output_executable_name = "game_debug";
+	options.output_path            = tprint("%/run_tree/", #filepath);
+	options.backend                = .X64;
+	options.text_output_flags      = 0;
+	options.emit_debug_info        = .NONE;
+
+	set_build_options(options, w);
+
+	compiler_begin_intercept(w);
+	add_build_file("src/main.jai", w);
+	message_loop();
+	compiler_end_intercept(w);
+
+	if our_debug_version_compilation_finished {
+		log("\nRuning our program...");
+
+		result := run_command("./run_tree/game_debug");
+
+		log("Our program exited with code %\n\n", result.exit_code);
+	}
+}
+
+setup_release :: (w: Workspace) {
+	options := get_build_options(w);
+
+	set_optimization(*options, .OPTIMIZED);
+
+	options.output_executable_name = "game";
+	options.output_path            = tprint("%/run_tree/", #filepath);
+	options.backend                = .LLVM;
+	options.text_output_flags      = 0;
+	options.emit_debug_info        = .NONE;
+
+	set_build_options(options, w);
+
+	add_build_file("src/main.jai", w);
+}
+
+build_debug   :: () { start_a_workspace("Debug",   setup_debug);   }
+build_release :: () { start_a_workspace("Release", setup_release); }
+
+message_loop :: () {
+	while true {
+		message := compiler_wait_for_message();
+		if !message break;
+
+		if message.kind == .COMPLETE {
+			complete := cast(*Message_Complete) message;
+			our_debug_version_compilation_finished = complete.error_code == 0;
+			break;
+		}
+	}
+}
+endsnippet
+
+snippet ;output "do_output=false" bA
+set_build_options_dc(.{do_output=false});
+endsnippet
+
+#vim: ts=2
