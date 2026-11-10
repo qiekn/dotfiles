@@ -55,5 +55,8 @@ return {
         },
       },
     },
+    config = function()
+      -- vim.cmd("RenderMarkdown disable")
+    end,
   },
 }
