@@ -5,11 +5,10 @@ return {
 
   { "rose-pine/neovim" },
   { "projekt0n/github-nvim-theme" },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { "catppuccin/nvim", name = "catppuccin" },
   {
     "folke/tokyonight.nvim",
     lazy = false,
-    priority = 1000,
     opts = {
       styles = {
         comments = { italic = false },
@@ -20,9 +19,8 @@ return {
 
   { -- Jonathon Blow
     "qiekn/naysayer.nvim",
-    dir = vim.fn.stdpath("config") .. "/lua/local_plugins/naysayer.nvim",
     lazy = false,
-    priority = 1000,
+    dir = vim.fn.stdpath("config") .. "/lua/local_plugins/naysayer.nvim",
   },
 
   -- ----------------------------------------------------------------------------: Config
@@ -78,6 +76,7 @@ return {
       -- Load the colorscheme here.
       -- vim.cmd.colorscheme("github_dark")
       vim.cmd.colorscheme("naysayer")
+      -- vim.cmd.colorscheme("tokyonight-night")
     end,
   },
 }
