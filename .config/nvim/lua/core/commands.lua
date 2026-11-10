@@ -47,3 +47,27 @@ vim.api.nvim_create_user_command("Jai", function(opts)
 end, {
   nargs = "+",
 })
+
+-- Toggle nvim-cmp autocomplete
+vim.api.nvim_create_user_command("CmpToggle", function()
+  local cmp = require("cmp")
+
+  local enabled = cmp.get_config().completion.autocomplete ~= false
+
+  local autocomplete = false
+  if not enabled then
+    autocomplete = { cmp.TriggerEvent.TextChanged }
+  end
+
+  cmp.setup({
+    completion = {
+      autocomplete = autocomplete,
+    },
+  })
+
+  if enabled then
+    cmp.close()
+  end
+
+  vim.notify("Cmp autocomplete: " .. (enabled and "OFF" or "ON"))
+end, {})
