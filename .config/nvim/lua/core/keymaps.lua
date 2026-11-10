@@ -38,9 +38,10 @@ vim.keymap.set("n", "<leader>mk", "`", { desc = "Goto Marks" })
 -- clangd
 vim.keymap.set("n", "<leader>tp", ":LspClangdSwitchSourceHeader<CR>", { desc = "C++: Switch Source <-> Header" })
 
+-- @TODO change this to vim command, e.g. collopse
 -- These two mappings reduce a sequence of empty (;b) or blank (;n) lines into a single line
-vim.keymap.set("n", ";b", "GoZ<Esc>:g/^$/.,/./-j<CR>Gdd", { desc = "Squeeze consecutive empty lines" })
-vim.keymap.set("n", ";n", "GoZ<Esc>:g/^[ <Tab>]*$/.,/[^ <Tab>]/-j<CR>Gdd", { desc = "Squeeze consecutive blank lines" })
+-- vim.keymap.set("n", ";b", "GoZ<Esc>:g/^$/.,/./-j<CR>Gdd:noh<CR>", { desc = "Squeeze consecutive empty lines" })
+-- vim.keymap.set("n", ";n", "GoZ<Esc>:g/^[ <Tab>]*$/.,/[^ <Tab>]/-j<CR>Gdd:noh<CR>", { desc = "Squeeze consecutive blank lines" })
 
 -- ----------------------------------------------------------------------------: Insert Mode
 -- foo(|)  when cursor is inside (), press ; --> foo();
