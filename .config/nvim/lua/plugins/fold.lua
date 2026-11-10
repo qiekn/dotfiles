@@ -50,7 +50,8 @@ return {
         local newVirtText = {}
         local foldedLines = endLnum - lnum + 1 -- 计算折叠的行数
         -- local suffix = " ⋯ "
-        local suffix = " ⋯ (" .. foldedLines .. " 行被折叠了喵~)"
+        -- local suffix = " ⋯ (" .. foldedLines .. " 行被折叠了喵~)"
+        local suffix = " ⋯ " .. foldedLines .. " lines"
         local sufWidth = vim.fn.strdisplaywidth(suffix)
         local targetWidth = width - sufWidth
         local curWidth = 0
