@@ -1,3 +1,5 @@
+不要自动 Git 提交
+
 ## LLMs Disclosure (AI 披露)
 
 And if LLMs was used in any way for a commit, use Co-Authored-By option.
@@ -31,7 +33,3 @@ If some program not found, check my zsh config
 
 - C:\msys64\home\user\.dotfiles\.config\zsh\core\env.zsh
 - C:\msys64\home\user\.dotfiles\.config\zsh\modules\msys2\env.zsh
-
-## Claudex context
-
-上下文限制在 300k, 提醒我优化上下文占用
