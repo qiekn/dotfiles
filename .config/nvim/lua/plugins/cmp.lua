@@ -45,31 +45,26 @@ return {
             vim.fn["UltiSnips#Anon"](args.body)
           end,
         },
-        completion = { completeopt = "menu,menuone,noinsert" },
+        completion = {
+          -- autocomplete = false,
+          completeopt = "menu,menuone,noinsert",
+        },
 
         mapping = cmp.mapping.preset.insert({
           ["<C-n>"] = cmp.mapping.select_next_item(),
           ["<C-p>"] = cmp.mapping.select_prev_item(),
 
           -- Scroll the documentation window [b]ack / [f]orward
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
+          -- ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+          -- ["<C-f>"] = cmp.mapping.scroll_docs(4),
 
           -- Accept ([y]es) the completion.
           ["<C-y>"] = cmp.mapping.confirm({ select = true }),
           ["<Tab>"] = cmp.mapping.confirm({ select = true }),
           ["<Enter>"] = cmp.mapping.confirm({ select = true }),
-          --[[
-          ["."] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.confirm({ select = true }) -- 确认补全
-            end
-            vim.api.nvim_feedkeys(".", "n", true) -- 手动输入 "."
-          end, { "i", "s" }),
-          ]]
 
           -- Manually trigger a completion from nvim-cmp.
-          ["<C-Space>"] = cmp.mapping.complete({}),
+          ["<C-f>"] = cmp.mapping.complete(),
         }),
         sources = {
           {
