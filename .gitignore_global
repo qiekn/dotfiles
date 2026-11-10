@@ -1,8 +1,12 @@
 .DS_Store
 .vscode/
+.workbuddy-ai/
 
 /demo/
 
 .refs/
 
 run.sh
+
+AGENTS.md
+CLAUDE.md
