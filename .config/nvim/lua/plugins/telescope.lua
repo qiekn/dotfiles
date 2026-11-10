@@ -71,10 +71,12 @@ return {
           file_ignore_patterns = {
             "%.meta$", -- used for Unity projects
             "%.png$",
+            "%.jpg$",
+            "%.ogg$",
             "[/\\]entt.h", -- ignore entt.h, because it's 3MB!! (only used for raylib ecs projects)
             -- "deps/.*%.h",
             "deps[/\\]",
-            "modules[/\\]",
+            -- "modules[/\\]",
             "vendor[/\\]",
             "3rdparty[/\\]",
             "lib[/\\]",
