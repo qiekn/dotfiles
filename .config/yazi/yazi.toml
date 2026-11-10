@@ -6,3 +6,8 @@ edit = [
 	{ run = 'nvim "$@"', desc = "nvim", block = true, for = "unix" },
 	{ run = 'nvim %*',   desc = "nvim", block = true, for = "windows" },
 ]
+
+[preview]
+image_filter = "lanczos3"
+max_width = 1000
+max_height = 1000
