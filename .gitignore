@@ -8,5 +8,6 @@
 # emacs
 auto-save-list/
 eln-cache/
+elpa/
 
 .claude
