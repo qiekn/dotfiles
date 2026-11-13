@@ -1,6 +1,7 @@
 # modules/msys2/alias.zsh — MSYS2 specific aliases
 
-alias open="explorer"
+# alias open="explorer"
+alias open="fp"
 alias make="mingw32-make"
 alias pdf="start sumatrapdf"
 alias findpdf="fd -e pdf | fzf | xargs -r sumatrapdf"
