@@ -155,6 +155,7 @@ window_rules:
       # - window_class: { equals: "Chrome_WidgetWin_1" }
       - window_process: { equals: "obs64" }
 
+      - window_title: { regex: "^Hello" }
       - window_title: { regex: "^ck:" }
       - window_title: { regex: "QIEKN ENGINE" }
       - window_title: { regex: "^ck - " }
