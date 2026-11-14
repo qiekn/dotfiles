@@ -38,6 +38,8 @@ vim.keymap.set("n", "<leader>mk", "`", { desc = "Goto Marks" })
 -- clangd
 vim.keymap.set("n", "<leader>tp", ":LspClangdSwitchSourceHeader<CR>", { desc = "C++: Switch Source <-> Header" })
 
+vim.keymap.set("n", "<leader>tc", "<cmd>Conceal<CR>", { desc = "[T]oggle [C]onceal", })
+
 -- ----------------------------------------------------------------------------: Insert Mode
 
 -- when cursor is inside (), press ; --> foo();

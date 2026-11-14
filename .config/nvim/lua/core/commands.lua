@@ -59,7 +59,7 @@ vim.api.nvim_create_user_command("CmpToggle", function()
 
   local autocomplete = false
   if not enabled then
-    autocomplete = { cmp.TriggerEvent.TextChanged }
+    autocomplete = { cmp.TriggerEvent.TextChanged } or false
   end
 
   cmp.setup({
@@ -91,3 +91,16 @@ end, {
     }
   end,
 })
+
+-- Toggle conceal
+vim.api.nvim_create_user_command("Conceal", function(opts)
+  local value = opts.args
+
+  if value == "on" then
+    vim.wo.conceallevel = 2
+  elseif value == "off" then
+    vim.wo.conceallevel = 0
+  else
+    vim.wo.conceallevel = vim.wo.conceallevel == 0 and 2 or 0
+  end
+end, { nargs = "?" })
