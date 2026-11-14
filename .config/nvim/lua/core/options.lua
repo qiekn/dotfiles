@@ -7,11 +7,6 @@ set.relativenumber = true
 set.cursorline = true
 set.mouse = "a"
 
--- fold
-set.foldmethod = "expr"
-set.foldexpr = "nvim_treesitter#foldexpr()"
-set.foldenable = false
-
 -- indent
 set.tabstop = 4
 set.shiftwidth = 0
