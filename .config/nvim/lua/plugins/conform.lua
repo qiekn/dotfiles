@@ -39,6 +39,7 @@ return {
           rust = true,
           css = true,
           javascript = true,
+          lua = true,
         }
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
