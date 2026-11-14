@@ -2,9 +2,9 @@
 -- See `:help vim.keymap.set()`
 
 -- Execute cursor line's or whole buffer's lua code
-vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
-vim.keymap.set("n", "<space>x", ":.lua<CR>")
-vim.keymap.set("v", "<space>x", ":lua<CR>")
+-- vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
+-- vim.keymap.set("n", "<space>x", ":.lua<CR>")
+-- vim.keymap.set("v", "<space>x", ":lua<CR>")
 
 -- Search Highlight
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -44,7 +44,8 @@ vim.keymap.set("n", "<leader>tp", ":LspClangdSwitchSourceHeader<CR>", { desc = "
 -- vim.keymap.set("n", ";n", "GoZ<Esc>:g/^[ <Tab>]*$/.,/[^ <Tab>]/-j<CR>Gdd:noh<CR>", { desc = "Squeeze consecutive blank lines" })
 
 -- ----------------------------------------------------------------------------: Insert Mode
--- foo(|)  when cursor is inside (), press ; --> foo();
+
+-- when cursor is inside (), press ; --> foo();
 vim.keymap.set("i", ";", function()
   -- 1. one line version
   -- return vim.fn.getline("."):sub(vim.fn.col("."), vim.fn.col(".")) == ")" and "<Right>;" or ";"
@@ -62,6 +63,7 @@ vim.keymap.set("i", ";", function()
 end, { expr = true, replace_keycodes = true })
 
 -- ----------------------------------------------------------------------------: Command Mode
+
 -- Vim command line mode navigation with up and down
 vim.keymap.set("c", "<Down>", function()
   return vim.fn.pumvisible() == 1 and "<C-n>" or "<Down>"
@@ -71,6 +73,5 @@ vim.keymap.set("c", "<Up>", function()
 end, { expr = true })
 
 -- ----------------------------------------------------------------------------: Termianl Mode
+
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
-vim.keymap.set("n", "<leader>mk", "`", { desc = "Goto Marks" })
-vim.keymap.set("n", "<leader>tp", ":LspClangdSwitchSourceHeader<CR>", { desc = "C++: Switch Source <-> Header" })
