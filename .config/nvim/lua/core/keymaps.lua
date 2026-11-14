@@ -26,8 +26,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- Move Block
--- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
--- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
 -- Scroll UP / DOWN
 -- vim.keymap.set("n", "<c-d>", "<c-d>zz")
@@ -37,11 +37,6 @@ vim.keymap.set("n", "<leader>mk", "`", { desc = "Goto Marks" })
 
 -- clangd
 vim.keymap.set("n", "<leader>tp", ":LspClangdSwitchSourceHeader<CR>", { desc = "C++: Switch Source <-> Header" })
-
--- @TODO change this to vim command, e.g. collopse
--- These two mappings reduce a sequence of empty (;b) or blank (;n) lines into a single line
--- vim.keymap.set("n", ";b", "GoZ<Esc>:g/^$/.,/./-j<CR>Gdd:noh<CR>", { desc = "Squeeze consecutive empty lines" })
--- vim.keymap.set("n", ";n", "GoZ<Esc>:g/^[ <Tab>]*$/.,/[^ <Tab>]/-j<CR>Gdd:noh<CR>", { desc = "Squeeze consecutive blank lines" })
 
 -- ----------------------------------------------------------------------------: Insert Mode
 

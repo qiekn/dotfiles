@@ -2,6 +2,9 @@ vim.cmd("command Q q!")
 vim.cmd("command Symbols Neotree document_symbols")
 vim.cmd("command Rmd RenderMarkdown toggle")
 
+-- vim.cmd([[command CollapseEmpty execute "normal! GoZ\<Esc>:g/^$/.,/./-j\<CR>Gdd:noh\<CR>"]])
+vim.cmd([[command CollapseBlank execute "normal! GoZ\<Esc>:g/^[ \<Tab>]*$/.,/[^ \<Tab>]/-j\<CR>Gdd:noh\<CR>"]])
+
 -- When you open neovim, change current windows terminal background
 local function sync_terminal_bg()
   local normal = vim.api.nvim_get_hl(0, { name = "Normal" })
