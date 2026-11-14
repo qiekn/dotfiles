@@ -6,4 +6,4 @@
 ; (("then" @punctuation.bracket) (#set! conceal "{"))
 ; (("do" @punctuation.bracket) (#set! conceal "{"))
 ; (("end" @punctuation.bracket) (#set! conceal "}"))
-; (("local" @keyword) (#set! conceal ""))
+(("local" @keyword) (#set! conceal ""))
