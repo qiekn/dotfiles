@@ -1,5 +1,9 @@
 ## global
 
+# notes:
+# - snip.rv means 'Snippet Return Value'
+# - `!p <your python code here>`
+
 global !p
 from jai import jai_debug_call
 from jai import jai_type_of
@@ -71,12 +75,18 @@ snippet #bake_arguments "" w
 #bake_arguments
 endsnippet
 
+# script
+snippet "(;jai|##|!!)" "#!/bin/env jai" brA
+#!/bin/env jai
+endsnippet
+
 ## hepler functions
-snippet hs "hello sailer" bA
+snippet "(hs|phs)" "hello sailer" brA
 print("Hello, Sailer!");
 endsnippet
 
-snippet print( "print()" bA
+# print
+snippet "(print\(|pt)" "print()" brA
 print("$0");
 endsnippet
 
@@ -88,15 +98,15 @@ endsnippet
 #print("`!p snip.rv = match.group(1)`=%\n", `!p snip.rv = match.group(1)`);
 #endsnippet
 
-snippet "^(\s*)([\w\.\[\]\s,]+);print" "print variables" brA
+snippet "^(\s*)([^;]+);(pt|print)" "print variables" brA
 `!p snip.rv = match.group(1) + jai_debug_call("print", match.group(2))`
 endsnippet
 
-snippet "^(\s*)([\w\.\[\]\s,]+);log" "log variables" brA
+snippet "^(\s*)([^;]+);log" "log variables" brA
 `!p snip.rv = match.group(1) + jai_debug_call("log", match.group(2))`
 endsnippet
 
-snippet "^(\s*)([\w\.\[\]]+);type" "print type_of" brA
+snippet "^(\s*)([^;]+);type" "print type_of" brA
 `!p snip.rv = match.group(1) + jai_type_of(match.group(2))`
 endsnippet
 
@@ -137,8 +147,15 @@ ${1:name} :: (${2:args}) -> ${3:int} {
 }
 endsnippet
 
-snippet ;struct "struct" bA
-${1:name} :: struct {
+# struct
+snippet ;st "struct" bA
+${VISUAL:MyStruct} :: struct {
+	$0
+}
+endsnippet
+
+snippet "(\w+);st" "struct" brA
+`!p snip.rv = match.group(1)` :: struct {
 	$0
 }
 endsnippet
@@ -314,4 +331,4 @@ snippet ;output "do_output=false" bA
 set_build_options_dc(.{do_output=false});
 endsnippet
 
-#vim: ts=2
+# vim: ts=2
