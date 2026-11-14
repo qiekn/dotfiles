@@ -1,7 +1,7 @@
 ;; extends
 
 ; ((identifier) @variable.builtin (#eq? @variable.builtin "self") (#set! conceal ""))
-; (("function" @keyword.function) (#set! conceal "󰊕"))
+(("function" @keyword.function) (#set! conceal "󰊕"))
 ; (("return" @keyword.function) (#set! conceal "R"))
 ; (("then" @punctuation.bracket) (#set! conceal "{"))
 ; (("do" @punctuation.bracket) (#set! conceal "{"))
