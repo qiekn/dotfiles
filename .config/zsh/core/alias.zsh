@@ -6,6 +6,7 @@ alias cl="clear"
 alias claude-danger="claude --dangerously-skip-permissions"
 
 alias vim='nvim'
+alias vm='nvim'
 alias emacs='runemacs'
 alias nvimdiff='nvim -d'
 alias python='python3'
