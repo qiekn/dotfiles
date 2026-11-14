@@ -90,7 +90,7 @@ return {
 
       -- See `:help telescope.builtin`
       local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
+      -- vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
       vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
       vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
       vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
@@ -146,6 +146,11 @@ return {
       vim.keymap.set("n", "<leader>sj", function()
         builtin.git_files({ cwd = vim.fn.expand("C:/msys64/opt/jai/modules") })
       end, { desc = "[S]earch [J]ai" })
+
+      -- search jai how_to
+      vim.keymap.set("n", "<leader>sh", function()
+        builtin.git_files({ cwd = vim.fn.expand("C:/msys64/home/user/jai/how_to") })
+      end, { desc = "[S]earch [H]ow_to" })
 
       vim.keymap.set("n", "<leader>si", function()
         builtin.live_grep({ cwd = vim.fn.expand("C:/msys64/opt/jai/modules") })
