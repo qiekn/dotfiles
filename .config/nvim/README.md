@@ -46,24 +46,6 @@ ln -s ~/.dotfiles/nvim ~/.config/nvim
 
 </details>
 
-<details><summary> Windows </summary>
-
-to-do: Create a symbolic link
-
-If you're using `cmd.exe`:
-
-```
-git clone https://github.com/dam9000/kickstart.nvim.git "%localappdata%\nvim"
-```
-
-If you're using `powershell.exe`
-
-```
-git clone https://github.com/dam9000/kickstart.nvim.git "${env:LOCALAPPDATA}\nvim"
-```
-
-</details>
-
 ### Install Recipes
 
 Below you can find OS specific install instructions for Neovim and dependencies.
