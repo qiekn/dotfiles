@@ -84,28 +84,30 @@ return {
       pcall(require("telescope").load_extension, "fzf")
       pcall(require("telescope").load_extension, "ui-select")
 
+      -- stylua: ignore start
       -- See `:help telescope.builtin`
       local builtin = require("telescope.builtin")
       -- vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
-      vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
-      vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
-      vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
+      vim.keymap.set("n", "<leader>sk", builtin.keymaps,     { desc = "[S]earch [K]eymaps" })
+      vim.keymap.set("n", "<leader>sf", builtin.find_files,  { desc = "[S]earch [F]iles" })
+      vim.keymap.set("n", "<leader>ss", builtin.builtin,     { desc = "[S]earch [S]elect Telescope" })
       vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
-      vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch [G]rep" })
-      vim.keymap.set("n", "<c-y>", builtin.live_grep)
+      vim.keymap.set("n", "<leader>sg", builtin.live_grep,   { desc = "[S]earch [G]rep" })
       vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
-      vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
-      vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-      vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch [B]uffer" })
-      vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[S]earch [B]uffer" })
+      vim.keymap.set("n", "<leader>sr", builtin.resume,      { desc = "[S]earch [R]esume" })
+      vim.keymap.set("n", "<leader>s.", builtin.oldfiles,    { desc = '[S]earch Recent Files ("." for repeat)' })
+      vim.keymap.set("n", "<leader>sb", builtin.buffers,     { desc = "[S]earch [B]uffer" })
       vim.keymap.set("n", "<leader>so", builtin.vim_options, { desc = "[S]et vim [O]ptions" })
-      vim.keymap.set("n", "<leader>sc", builtin.commands, { desc = "[S]earch vim [C]ommands" })
-      vim.keymap.set("n", "<leader>cc", builtin.commands, { desc = "[S]earch vim [C]ommands" })
+      vim.keymap.set("n", "<leader>sc", builtin.commands,    { desc = "[S]earch vim [C]ommands" })
+      vim.keymap.set("n", "<leader>cc", builtin.commands,    { desc = "[S]earch vim [C]ommands" })
+      vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[S]earch [B]uffer" })
+      vim.keymap.set("n", "<c-y>", builtin.live_grep)
 
       vim.keymap.set("n", "<esc>o", builtin.buffers, { desc = "" })
       vim.keymap.set("n", "<esc>f", builtin.current_buffer_fuzzy_find, { desc = "" })
-      vim.keymap.set("n", "<esc>p", builtin.find_files, { desc = "" })
+      -- vim.keymap.set("n", "<esc>p", builtin.find_files, { desc = "" }) -- we use fzf plugin
       vim.keymap.set("n", "<esc>P", builtin.commands, { desc = "" })
+      -- stylua: ignore end
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set("n", "<leader>/", function()

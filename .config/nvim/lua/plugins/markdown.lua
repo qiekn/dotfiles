@@ -11,6 +11,7 @@ return {
   },
   {
     "MeanderingProgrammer/render-markdown.nvim",
+    ft = "markdown",
     opts = {
       default = false,
       heading = {

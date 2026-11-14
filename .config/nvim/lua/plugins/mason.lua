@@ -43,6 +43,7 @@ return {
         "emmet-language-server",
         "tex-fmt",
       },
+      run_on_start = false, -- Optimize vim start time. So you manually run :MasonToolsInstall
     },
   },
   -- Additional LSP configuration for Lua
