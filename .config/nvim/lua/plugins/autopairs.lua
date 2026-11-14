@@ -9,7 +9,7 @@ return {
   config = function()
     local autopairs = require("nvim-autopairs")
 
-    local enabled_by_default = false
+    local enabled_by_default = true
 
     autopairs.setup({})
     if not enabled_by_default then
