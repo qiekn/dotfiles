@@ -7,6 +7,7 @@ require("core.lazy-bootstrap")
 
 -- [[ Configure and install plugins ]]
 require("core.lazy-plugins")
+require("core.autocmds")
 
 -- [[ Custom Keymaps ]]
 require("core.keymaps")
