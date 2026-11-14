@@ -3,13 +3,12 @@
 return {
   -- ----------------------------------------------------------------------------: Themes
 
-  { "rose-pine/neovim" },
-  { "projekt0n/github-nvim-theme" },
-  { "catppuccin/nvim", name = "catppuccin" },
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
+  { "rose-pine/neovim",                     lazy = true, },
+  { "catppuccin/nvim", name = "catppuccin", lazy = true, },
+  { "projekt0n/github-nvim-theme" ,         lazy = true, },
+  { "folke/tokyonight.nvim",
     opts = {
+      style = "night",
       styles = {
         comments = { italic = false },
         keywords = { italic = false },
@@ -19,7 +18,6 @@ return {
 
   { -- Jonathon Blow
     "qiekn/naysayer.nvim",
-    lazy = false,
     dir = vim.fn.stdpath("config") .. "/lua/local_plugins/naysayer.nvim",
   },
 
@@ -45,6 +43,7 @@ return {
           "SignColumn",
           "Folded",
         },
+        --[[
         extra_groups = {
           -- "NeoTreeNormal",
 
@@ -68,15 +67,11 @@ return {
           "TelescopeMatching",
           "TelescopePreviewLine",
         },
+        --]]
       })
 
-      vim.cmd("TransparentEnable")
-      -- vim.cmd("TransparentDisable")
-
-      -- Load the colorscheme here.
-      -- vim.cmd.colorscheme("github_dark")
+      vim.g.transparent_enabled = true
       vim.cmd.colorscheme("naysayer")
-      -- vim.cmd.colorscheme("tokyonight-night")
     end,
   },
 }
