@@ -74,3 +74,20 @@ vim.api.nvim_create_user_command("CmpToggle", function()
 
   vim.notify("Cmp autocomplete: " .. (enabled and "OFF" or "ON"))
 end, {})
+
+-- Quick change comment color
+vim.api.nvim_create_user_command("Comment", function(opts)
+  vim.api.nvim_set_hl(0, "Comment", {
+    fg = opts.args,
+  })
+end, {
+  nargs = 1,
+
+  complete = function()
+    return {
+      "#40c040",
+      "#8b949e",
+      "#ff0000",
+    }
+  end,
+})
