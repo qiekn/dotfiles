@@ -25,31 +25,21 @@ return {
       end)
     end
 
-    map_select("af", "@function.outer")
+    map_select("af", "@function.outer") -- We want to use 'p' abbr procedure, but 'p' in nvim is paragrah, so we keep 'f'
     map_select("if", "@function.inner")
 
-    map_select("ac", "@class.outer")
-    map_select("ic", "@class.inner")
+    map_select("as", "@class.outer") -- Current, we use this to jump jai Struct, No OOP, so use 's' instead of 'c'
+    map_select("is", "@class.inner")
 
     -- ------------------------------------------------------------ Move
 
     local move = require("nvim-treesitter-textobjects.move")
 
-    vim.keymap.set({ "n", "x", "o" }, "]f", function()
-      move.goto_next_start("@function.outer", "textobjects")
-    end)
+    vim.keymap.set({ "n", "x", "o" }, "]f", function() move.goto_next_start("@function.outer", "textobjects") end)
+    vim.keymap.set({ "n", "x", "o" }, "[f", function() move.goto_previous_start("@function.outer", "textobjects") end)
 
-    vim.keymap.set({ "n", "x", "o" }, "[f", function()
-      move.goto_previous_start("@function.outer", "textobjects")
-    end)
-
-    vim.keymap.set({ "n", "x", "o" }, "]c", function()
-      move.goto_next_start("@class.outer", "textobjects")
-    end)
-
-    vim.keymap.set({ "n", "x", "o" }, "[c", function()
-      move.goto_previous_start("@class.outer", "textobjects")
-    end)
+    vim.keymap.set({ "n", "x", "o" }, "]s", function() move.goto_next_start("@class.outer", "textobjects") end)
+    vim.keymap.set({ "n", "x", "o" }, "[s", function() move.goto_previous_start("@class.outer", "textobjects") end)
 
     -- ------------------------------------------------------------ Repeat
 
