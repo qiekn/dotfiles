@@ -46,7 +46,7 @@ return {
           end,
         },
         completion = {
-          keyword_length = 5,
+          keyword_length = 3,
           -- autocomplete = false,
           completeopt = "menu,menuone,noinsert",
         },
