@@ -8,6 +8,13 @@ return {
       indent = {
         char = "▏",
       },
+      scope = {
+        include = {
+          node_type = {
+            jai = { "block", "struct_body" },
+          },
+        },
+      },
     },
   },
 }

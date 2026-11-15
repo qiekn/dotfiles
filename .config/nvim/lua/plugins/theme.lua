@@ -19,6 +19,9 @@ return {
   { -- Jonathon Blow
     "qiekn/naysayer.nvim",
     dir = vim.fn.stdpath("config") .. "/lua/local_plugins/naysayer.nvim",
+    config = function ()
+      vim.cmd.colorscheme("naysayer")
+    end
   },
 
   -- ----------------------------------------------------------------------------: Config
@@ -32,6 +35,7 @@ return {
       require("telescope").load_extension("themes")
     end,
   },
+  --[[
   { -- Transparent background
     "xiyaowong/transparent.nvim",
     config = function()
@@ -43,35 +47,18 @@ return {
           "SignColumn",
           "Folded",
         },
-        --[[
-        extra_groups = {
-          -- "NeoTreeNormal",
-
-          "TelescopeNormal",
-          "TelescopeBorder",
-
-          "TelescopePromptNormal",
-          "TelescopePromptBorder",
-          "TelescopePromptTitle",
-
-          "TelescopeResultsNormal",
-          "TelescopeResultsBorder",
-          -- "TelescopeResultsTitle",
-
-          "TelescopePreviewNormal",
-          "TelescopePreviewBorder",
-          -- "TelescopePreviewTitle",
-        },
-        exclude_groups = {
-          "TelescopeSelection",
-          "TelescopeMatching",
-          "TelescopePreviewLine",
-        },
-        --]]
+        -- Fix indent_blankline
+        on_clear = function ()
+          vim.schedule(function()
+            if package.loaded["ibl"] then
+              require("ibl").debounced_refresh(0)
+            end
+          end)
+        end
       })
 
       vim.g.transparent_enabled = true
-      vim.cmd.colorscheme("naysayer")
     end,
   },
+  --]]
 }

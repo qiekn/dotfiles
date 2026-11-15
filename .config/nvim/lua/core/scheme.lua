@@ -2,18 +2,29 @@ local C = {
   orange = "#ff9303",
 }
 
--- vim.cmd("hi Normal ctermbg=none guibg=none")
--- vim.cmd("hi CursorLine guibg=#383f58")
--- vim.cmd("hi CursorLine guibg=red ctermbg=red ctermfg=white")
--- vim.cmd("hi CursorLineNr guibg=red ctermbg=red ctermfg=white")
+local function apply_custom_highlight()
+  -- Transparent background
+  vim.cmd("hi NormalFloat guibg=NONE")
+  vim.cmd("hi SignColumn  guibg=NONE")
+  vim.cmd("hi Folded      guibg=NONE")
 
-vim.cmd("hi @EveryoneLoveDuck guifg=#ffa657")
-vim.cmd("hi FloatBorder guifg=" .. C.orange .. " guibg=none")
-vim.cmd("hi FzfLuaFzfMatch guifg=" .. C.orange)
-vim.cmd("hi FzfLuaBorder guifg=" .. C.orange)
+  -- Custom colors
+  vim.cmd("hi @EveryoneLoveDuck guifg=#ffa657")
+  vim.cmd("hi FloatBorder    guifg=" .. C.orange .. " guibg=NONE")
+  vim.cmd("hi FzfLuaFzfMatch guifg=" .. C.orange)
+  vim.cmd("hi FzfLuaBorder   guifg=" .. C.orange)
 
--- Fix italic in LSP hover
--- vim.cmd("hi @markup.raw gui=none")
-vim.cmd("hi @markup.italic gui=none")
+  -- vim.cmd("hi CursorLine guibg=#383f58")
+  -- vim.cmd("hi CursorLine guibg=red ctermbg=red ctermfg=white")
+  -- vim.cmd("hi CursorLineNr guibg=red ctermbg=red ctermfg=white")
+
+  -- Fix italic in LSP hover
+  vim.cmd("hi @markup.italic gui=NONE")
+end
+
+apply_custom_highlight()
+
+-- RETURN
+C.reset = apply_custom_highlight
 
 return C
