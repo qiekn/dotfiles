@@ -7,6 +7,7 @@ local function apply_custom_highlight()
   vim.cmd("hi NormalFloat guibg=NONE")
   vim.cmd("hi SignColumn  guibg=NONE")
   vim.cmd("hi Folded      guibg=NONE")
+  vim.cmd("hi IblScope    guibg=NONE")
 
   -- Custom colors
   vim.cmd("hi @EveryoneLoveDuck guifg=#ffa657")
@@ -20,6 +21,11 @@ local function apply_custom_highlight()
 
   -- Fix italic in LSP hover
   vim.cmd("hi @markup.italic gui=NONE")
+
+  -- Fix indent_blankline
+  if package.loaded["ibl"] then
+    require("ibl").update({})
+  end
 end
 
 apply_custom_highlight()

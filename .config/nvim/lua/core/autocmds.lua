@@ -17,11 +17,6 @@ local function update_colorscheme()
     -- Some transparent settings
     scheme.reset();
 
-    -- Fix indent_blankline
-    if package.loaded["ibl"] then
-      require("ibl").update({})
-    end
-
     -- Sync terminal background
     local bg = vim.api.nvim_get_hl(0, { name = "Normal" }).bg
     io.write(("\27]11;#%06x\27\\"):format(bg))
