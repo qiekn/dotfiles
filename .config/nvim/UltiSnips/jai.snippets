@@ -12,6 +12,12 @@ from jai import jai_inline
 from jai import jai_postfix_cast
 endglobal
 
+## directives
+
+snippet #ba "" wA
+#bake_arguments
+endsnippet
+
 ## import
 
 snippet ip "import" bA
@@ -21,26 +27,6 @@ endsnippet
 snippet import "import" b
 #import "$1";
 $0
-endsnippet
-
-## function
-
-snippet func "function" b
-${1:func_name } :: () {
-	$0
-}
-endsnippet
-
-snippet "(\w+)\*\*" "function" rA
-`!p snip.rv = match.group(1)` :: () {
-	$0
-}
-endsnippet
-
-snippet "(\w+)fn" "function" rA
-`!p snip.rv = match.group(1)` :: () {
-	$0
-}
 endsnippet
 
 ## ;commands
@@ -106,10 +92,6 @@ snippet "^(\s*)([^;]+);log" "log variables" brA
 `!p snip.rv = match.group(1) + jai_debug_call("log", match.group(2))`
 endsnippet
 
-snippet "^(\s*)([^;]+);type" "print type_of" brA
-`!p snip.rv = match.group(1) + jai_type_of(match.group(2))`
-endsnippet
-
 snippet "^(\s*)(.+);defer" "defer current statement" brA
 `!p snip.rv = match.group(1) + jai_defer(match.group(2))`
 endsnippet
@@ -118,33 +100,29 @@ snippet "^(\s*)(.+);inline" "inline current statement" brA
 `!p snip.rv = match.group(1) + jai_inline(match.group(2))`
 endsnippet
 
-# ;fn     -> no args, no return
-# a;fn    -> args, no return
-# r;fn    -> no args, return
-# ar;fn   -> args, return
 
+# procedure
 snippet ;fn "function" bA
-${1:name} :: () {
+${1:${VISUAL}} :: () {
 	$0
 }
 endsnippet
 
-snippet a;fn "function arguments" bA
-${1:name} :: (${2:args}) {
-	$0
+snippet "(\w+)(\*\*|fn)" "function" irA
+`!p snip.rv = match.group(1)` :: () {
+	${0:${VISUAL}}
 }
 endsnippet
 
-snippet r;fn "function return" bA
-${1:name} :: () -> ${2:int} {
-	$0
-}
+# foo;size -> size_of(foo)
+# foo;type -> type_of(foo)
+
+snippet "(\w+);size" "size_of()" rA
+size_of(`!p snip.rv = match.group(1)`)
 endsnippet
 
-snippet ar;fn "function arguments return" bA
-${1:name} :: (${2:args}) -> ${3:int} {
-	$0
-}
+snippet "(\w+);type" "type_of()" rA
+type_of(`!p snip.rv = match.group(1)`)
 endsnippet
 
 # struct
@@ -193,27 +171,27 @@ snippet #load "#load" bA
 #load "$0";
 endsnippet
 
-# -----------------------------------------------------------------------------: first.jai
+# first.jai
 
 snippet ;first "first.jai" bA
-OUTPUT_EXECUTABLE_NAME :: "${1:${VISUAL:app}}";
-OUTPUT_DIRECTORY :: "bin";
-$0
+#!/bin/env jai
+
+output_name :: "${0:${VISUAL:app}}";
+output_path :: "bin";
+
 #run {
-	w := compiler_create_workspace("Jail");
+	make_directory_if_it_does_not_exit(output_path);
+
+	w := compiler_create_workspace("Target Program");
 	if !w {
-		write_string("The world is not ready for jai!\n");
+		log("Failed to create workspace");
 		return;
 	}
 
 	options := get_build_options(w);
 
-	options.output_executable_name = OUTPUT_EXECUTABLE_NAME;
-	options.output_path = OUTPUT_DIRECTORY;
-	if !make_directory_if_it_does_not_exist(OUTPUT_DIRECTORY) {
-		log(tprint("Could not create output directory %.", OUTPUT_DIRECTORY));
-		return;
-	}
+	options.output_executable_name = output_name;
+	options.output_path = output_path;
 
 	set_build_options(options, w);
 
@@ -227,7 +205,6 @@ $0
 #import "File";
 endsnippet
 
-# -----------------------------------------------------------------------------: first.jai alt
 snippet ;jail "first.jai" b
 #!/bin/env jai
 
@@ -329,6 +306,51 @@ endsnippet
 
 snippet ;output "do_output=false" bA
 set_build_options_dc(.{do_output=false});
+endsnippet
+
+# branching
+
+snippet if "if statement" b
+if ${0} {
+	${VISUAL}
+}
+endsnippet
+
+snippet ife "if else statement" b
+if $1 {
+	${2:${VISUAL}}
+} else {
+	$0
+}
+endsnippet
+
+# loops
+
+snippet for "for loop" b
+for ${1:${VISUAL}} {
+	$0
+}
+endsnippet
+
+snippet "(\w+);for$" "for loop" irA
+for `!p snip.rv = match.group(1)` {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet "(\w+);\*for$" "for pointer loop" irA
+for * `!p snip.rv = match.group(1)` {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# marco
+
+snippet ;macro "macro" b
+${1:macro} :: (${2:body}: Code) #expand {
+	#insert $2;
+	$0
+}
 endsnippet
 
 # vim: ts=2
