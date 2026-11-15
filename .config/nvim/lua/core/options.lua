@@ -15,7 +15,7 @@ set.breakindent = true -- Enable break indent
 
 set.list = true
 set.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-vim.cmd("autocmd FileType go,jai setlocal nolist")
+vim.cmd("autocmd FileType go,jai,netrw setlocal nolist")
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
