@@ -14,7 +14,8 @@ local function update_colorscheme()
     -- Change colorscheme
     vim.cmd.colorscheme(theme)
 
-    -- Some transparent settings
+    -- Some transparent settings. And we call this manually, because
+    -- nvim_create_autocmd' don't response to vim.cmd.colorscheme
     scheme.reset();
 
     -- Sync terminal background
@@ -29,6 +30,8 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FileType", "UIEnter" }, {
   callback = update_colorscheme,
 })
 
+-- Everytime user :colorscheme themename, we re-apply custom highlights
 vim.api.nvim_create_autocmd("ColorScheme", {
+  nested = true,
   callback = scheme.reset,
 })

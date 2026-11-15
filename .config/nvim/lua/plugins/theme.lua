@@ -21,6 +21,7 @@ return {
     dir = vim.fn.stdpath("config") .. "/lua/local_plugins/naysayer.nvim",
     config = function ()
       vim.cmd.colorscheme("naysayer")
+      require("core.scheme").reset();
     end
   },
 
