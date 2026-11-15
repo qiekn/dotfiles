@@ -5,6 +5,7 @@ return {
   "nvim-neo-tree/neo-tree.nvim",
   config = function()
     require("neo-tree").setup({
+      ---@diagnostic disable-next-line: missing-fields
       source_selector = {
         winbar = true,
         statusline = false,
@@ -28,6 +29,7 @@ return {
         window = {
           mappings = {
             ["l"] = "open",
+            ["\\"] = "close_window",
           },
         },
         filtered_items = {
@@ -37,6 +39,11 @@ return {
           never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
             ".DS_Store",
             "thumbs.db",
+          },
+          never_show_by_pattern = {
+            "*.exe",
+            "*.pdb",
+            "*.jpg",
             "*.png",
           },
           show_hidden_count = false,
@@ -61,14 +68,5 @@ return {
   keys = {
     { "\\", ":Neotree reveal<CR>", desc = "NeoTree reveal", silent = true },
     { "<leader>o", ":Neotree toggle<CR>", desc = "NeoTree toggle", silent = true },
-  },
-  opts = {
-    filesystem = {
-      window = {
-        mappings = {
-          ["\\"] = "close_window",
-        },
-      },
-    },
   },
 }
