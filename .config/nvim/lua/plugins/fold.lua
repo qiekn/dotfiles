@@ -20,10 +20,32 @@ return {
     },
     event = "BufReadPost",
     opts = {
-      provider_selector = function(bufnr, filetype, buftype)
+      provider_selector = function(bufnr, filetype)
+        -- fold for ultisnips files
+        if filetype == "snippets" then
+          return function()
+            local folds = {}
+            local start
+
+            for i, line in ipairs(vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)) do
+              if line:match("^snippet ") then
+                start = i - 1
+              elseif line:match("^endsnippet") and start then
+                folds[#folds + 1] = {
+                  startLine = start,
+                  endLine = i - 1,
+                }
+                start = nil
+              end
+            end
+
+            return folds
+          end
+        end
+
         -- There is no treesitter for jai, include } to make fold single line
         if filetype == "jai" then
-          return function(bufnr)
+          return function()
             local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
             local folds = {}
             local stack = {}
@@ -44,34 +66,37 @@ return {
             return folds
           end
         end
+
         return { "treesitter", "indent" }
       end,
-      fold_virt_text_handler = function(virtText, lnum, endLnum, width, truncate)
-        local newVirtText = {}
-        local foldedLines = endLnum - lnum + 1 -- 计算折叠的行数
-        -- local suffix = " ⋯ "
-        -- local suffix = " ⋯ (" .. foldedLines .. " 行被折叠了喵~)"
-        local suffix = " ⋯ " .. foldedLines .. " lines"
-        local sufWidth = vim.fn.strdisplaywidth(suffix)
-        local targetWidth = width - sufWidth
-        local curWidth = 0
+      fold_virt_text_handler = function(virt_text, lnum, end_lnum, width, truncate)
+        local new_virt_text = {}
+        local folded_lines = end_lnum - lnum + 1
 
-        -- 只保留第一行的内容
-        for _, chunk in ipairs(virtText) do
-          local chunkText = chunk[1]
-          local chunkWidth = vim.fn.strdisplaywidth(chunkText)
-          if targetWidth > curWidth + chunkWidth then
-            table.insert(newVirtText, chunk)
-            curWidth = curWidth + chunkWidth
+        -- local suffix = " ⋯ (" .. folded_lines .. " 行被折叠了喵~)"
+        local suffix = " ⋯ " .. folded_lines .. " lines"
+        local suffix_width = vim.fn.strdisplaywidth(suffix)
+        local target_width = width - suffix_width
+        local current_width = 0
+
+        -- Preserve the first line's content and truncate it if necessary.
+        for _, chunk in ipairs(virt_text) do
+          local chunk_text = chunk[1]
+          local chunk_width = vim.fn.strdisplaywidth(chunk_text)
+
+          if target_width > current_width + chunk_width then
+            table.insert(new_virt_text, chunk)
+            current_width = current_width + chunk_width
           else
-            chunkText = truncate(chunkText, targetWidth - curWidth)
-            table.insert(newVirtText, { chunkText, chunk[2] })
-            curWidth = curWidth + vim.fn.strdisplaywidth(chunkText)
+            chunk_text = truncate(chunk_text, target_width - current_width)
+            table.insert(new_virt_text, { chunk_text, chunk[2] })
+            current_width = current_width + vim.fn.strdisplaywidth(chunk_text)
             break
           end
         end
-        table.insert(newVirtText, { suffix, "Folded" })
-        return newVirtText
+
+        table.insert(new_virt_text, { suffix, "Folded" })
+        return new_virt_text
       end,
     },
     init = function()
@@ -82,8 +107,12 @@ return {
       vim.o.foldenable = true
       vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 
-      vim.keymap.set("n", "zR", function() require("ufo").openAllFolds() end)
-      vim.keymap.set("n", "zM", function() require("ufo").closeAllFolds() end)
+      vim.keymap.set("n", "zR", function()
+        require("ufo").openAllFolds()
+      end)
+      vim.keymap.set("n", "zM", function()
+        require("ufo").closeAllFolds()
+      end)
     end,
   },
   -- Folding preview, by default h and l keys are used.
