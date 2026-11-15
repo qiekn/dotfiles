@@ -15,8 +15,8 @@ return {
     opts = {
       default = false,
       heading = {
-        position = "inline",
-        sign = true,
+        enable = false,
+        atx = false,
       },
       bullet = {
         icons = { "•", "◦", "▸", "▹" },
@@ -30,6 +30,9 @@ return {
         right_pad = 1,
         language_icon = true,
         language_name = true,
+      },
+      quote = {
+        icon ="|"
       },
       overrides = {
         buftype = {
@@ -56,8 +59,5 @@ return {
         },
       },
     },
-    config = function()
-      -- vim.cmd("RenderMarkdown disable")
-    end,
   },
 }

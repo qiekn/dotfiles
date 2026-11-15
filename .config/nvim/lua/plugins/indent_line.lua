@@ -6,7 +6,7 @@ return {
     main = "ibl",
     opts = {
       indent = {
-        char = "▏",
+        char = "▏", -- ▏┊
       },
       scope = {
         include = {
@@ -14,6 +14,9 @@ return {
             jai = { "block", "struct_body" },
           },
         },
+      },
+      exclude = {
+        filetypes = { "markdown" },
       },
     },
   },
